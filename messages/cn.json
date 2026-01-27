@@ -1,0 +1,107 @@
+{
+  "HomePage": {
+    "title": "欢迎来到主页",
+    "description": "探索我们精美的云莱瓷器艺术收藏"
+  },
+  "Hero": {
+    "titlePrefix": "陶瓷花盆",
+    "titleSuffix": "制造商与出口商",
+    "subtitle": "用优雅耐用的花盆提升室内外空间。专为可持续生活设计，深受全球买家信赖。"
+  },
+  "Navigation": {
+    "home": "首页",
+    "products": "产品",
+    "catalog": "目录",
+    "blog": "博客",
+    "about": "关于我们",
+    "contact": "联系我们"
+  },
+  "Common": {
+    "learnMore": "了解更多",
+    "viewDetails": "查看详情",
+    "contactUs": "联系我们",
+    "freeShipping": "全美订单满 $50 免运费",
+    "flashSale": "限时特卖警报：最高省 40% - 库存有限，欲购从速！"
+  },
+  "Footer": {
+    "subscribeTitle": "订阅我们的通讯",
+    "subscribePlaceholder": "youremail123@gmail.com",
+    "subscribeBtn": "订阅",
+    "description": "Aurora Pots 制造的户外玻璃纤维花盆旨在体现永恒的品质。由优质玻璃纤维制成，每个花盆都能承受各种恶劣天气...",
+    "learnMore": "了解更多",
+    "support": "客户支持",
+    "contact": "联系我们",
+    "hotelRes": "酒店预订",
+    "ticketOffice": "售票处",
+    "rights": "© 2026 Yunlai Porcelain Art Co. Ltd. | All Rights Reserved"
+  },
+  "Insights": {
+    "titlePrefix": "目录故事 &",
+    "titleSuffix": "产品见解",
+    "subtitle": "您室内外景观的全方位服务合作伙伴",
+    "explore": "探索更多",
+    "articleTitle": "是什么让 Aurora Pots 的户外玻璃纤维花盆脱颖而出？",
+    "articleDesc": "Aurora Pots 制造的户外玻璃纤维花盆旨在体现永恒的品质。由优质玻璃纤维制成，每个花盆都能承受各种恶劣天气...",
+    "date": "2025年4月11日"
+  },
+  "WorksProcess": {
+    "titlePrefix": "我们的",
+    "titleSuffix": "作品与流程",
+    "projectTitle": "One&Only Za'abeel，扎根于奢华",
+    "location": "迪拜",
+    "date": "2025年1月12日",
+    "processTitlePrefix": "我们的",
+    "processTitleSuffix": "工作流程",
+    "steps": {
+      "step1": { "title": "设计会议", "desc": "在我们的初次会议中，我们会详细讨论您的需求并制定定制的景观解决方案。" },
+      "step2": { "title": "项目规范", "desc": "根据您的要求，我们为您提供您选择的所有产品的规格说明。" },
+      "step3": { "title": "客户批准", "desc": "如果没有修改意见，我们将继续从您那里获得正式批准。" },
+      "step4": { "title": "安装与维护", "desc": "一旦批准，我们将继续打造您的理想空间并对其进行有效维护。" }
+    }
+  },
+  "Services": {
+    "titlePrefix": "我们的",
+    "titleSuffix": "服务",
+    "subtitle": "您室内外景观的全方位服务合作伙伴",
+    "items": {
+      "sampling": { "title": "生产前打样", "desc": "我们的打样服务允许客户在生产开始前完善每一个细节——从形状和比例到纹理和表面处理。" },
+      "landscaping": { "title": "室内外景观", "desc": "我们的打样服务允许客户在生产开始前完善每一个细节——从形状和比例到纹理和表面处理。" },
+      "greenWall": { "title": "绿墙", "desc": "我们的打样服务允许客户在生产开始前完善每一个细节——从形状和比例到纹理和表面处理。" }
+    }
+  },
+  "NewToYou": {
+    "titlePrefix": "新",
+    "titleSuffix": "品推荐",
+    "tabs": {
+      "bestSeller": "热销排行",
+      "newArrival": "新品上市",
+      "offer": "特别优惠",
+      "trending": "潮流趋势",
+      "all": "所有商品"
+    },
+    "productName": "Plonta Bloom"
+  },
+  "MeetTheTrends": {
+    "label": "关于我们",
+    "titlePart1": "遇见",
+    "titlePart2": "本季",
+    "titlePart3": "潮流趋势。",
+    "desc": "显然通过我们的努力，不仅是在陶瓷艺术上，更是在打造生活美学的高度上。",
+    "button": "更多关于我们"
+  },
+  "FindPot": {
+    "titlePrefix": "为您的植物找到",
+    "titleHighlight": "合适的花盆",
+    "titleSuffix": "",
+    "categories": {
+      "indoor": "室内植物",
+      "outdoor": "室外植物",
+      "succulents": "多肉植物与仙人掌",
+      "flowering": "开花植物",
+      "herbs": "香草与厨房植物",
+      "large": "大型植物与树木",
+      "hanging": "悬挂植物",
+      "tabletop": "桌面植物"
+    }
+  }
+}

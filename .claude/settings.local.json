@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(del layout.tsx page.tsx)",
+      "Bash(npm uninstall:*)"
+    ]
+  }
+}

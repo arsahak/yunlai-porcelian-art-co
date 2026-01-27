@@ -1,0 +1,162 @@
+'use client';
+
+import Button from '@/components/shared/Button';
+import { useLocale, type Locale } from '@/lib/i18n';
+import translations from '@/messages/translations';
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { ChevronDown, Globe, Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { scrollY } = useScroll();
+  const pathname = usePathname();
+  const { locale, setLocale } = useLocale();
+  const t = translations[locale].Navigation;
+  const commonT = translations[locale].Common;
+
+  const toggleLanguage = () => {
+    const newLocale: Locale = locale === 'en' ? 'cn' : 'en';
+    setLocale(newLocale);
+  };
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 50) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  });
+
+  const navLinks = [
+    { name: t.home, href: '/' },
+    { name: t.products, href: '/products', hasDropdown: true },
+    { name: t.catalog, href: '/catalog' },
+    { name: t.blog, href: '/blog' },
+    { name: t.about, href: '/about' },
+    { name: t.contact, href: '/contact' },
+  ];
+
+  return (
+    <>
+      <motion.nav
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-white/80 backdrop-blur-md shadow-sm py-2 top-0' 
+            : 'bg-transparent py-4 top-[40px] md:top-[36px]'
+        }`}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="container mx-auto px-4 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2 group">
+             <Image 
+               src="/assets/site-logo/site-logo.png" 
+               alt="Yunlai Porcelain Art" 
+               width={180} 
+               height={50}
+               className="h-10 md:h-12 w-auto object-contain transition-opacity hover:opacity-90"
+               priority
+             />
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <div key={link.name} className="relative group">
+                <Link 
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 py-2
+                    ${pathname === link.href ? 'text-primary' : 'text-secondary/80'}
+                  `}
+                >
+                  {link.name}
+                  {link.hasDropdown && (
+                    <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                  )}
+                </Link>
+                {/* Simple Horizontal Underline Hover Effect */}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop Right Actions */}
+          <div className="hidden lg:flex items-center gap-4">
+             {/* Language Switcher */}
+             <button 
+               onClick={toggleLanguage}
+               className="flex items-center gap-1 text-sm font-medium text-secondary hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-gray-100"
+             >
+               <Globe className="w-4 h-4" />
+               <span className="uppercase">{locale}</span>
+             </button>
+
+             <Button 
+               href="/contact" 
+               className="!px-6 !py-2 !text-sm"
+             >
+               {commonT.contactUs}
+             </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="lg:hidden text-secondary p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+      </motion.nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="fixed inset-0 top-[80px] z-40 bg-white/95 backdrop-blur-lg lg:hidden pt-8 px-6"
+        >
+          <div className="flex flex-col space-y-6">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name}
+                href={link.href}
+                className="text-2xl font-title text-secondary hover:text-primary transition-colors border-b border-gray-100 pb-4"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+            
+            {/* Mobile Language Switcher */}
+            <div className="flex items-center gap-4 py-4 border-b border-gray-100">
+              <span className="text-secondary font-medium">Language:</span>
+              <button 
+                onClick={toggleLanguage}
+                className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-secondary hover:text-primary"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="uppercase">{locale === 'en' ? 'English' : '中文'}</span>
+              </button>
+            </div>
+
+            <div className="pt-4">
+              <Button href="/contact" className="w-full">
+                {commonT.contactUs}
+              </Button>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </>
+  );
+};
+
+export default Navbar;

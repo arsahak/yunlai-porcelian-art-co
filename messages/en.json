@@ -1,0 +1,107 @@
+{
+  "HomePage": {
+    "title": "Welcome to the Home Page",
+    "description": "Discover our beautiful collection of Yunlai porcelain art"
+  },
+  "Hero": {
+    "titlePrefix": "Ceramic Flower",
+    "titleSuffix": "Pot Manufacturer & Exporter",
+    "subtitle": "Elevating indoor and outdoor spaces with elegant, durable planters. Designed for sustainable living and trusted by global buyers."
+  },
+  "Navigation": {
+    "home": "Home",
+    "products": "Products",
+    "catalog": "Catalog",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "Common": {
+    "learnMore": "Learn More",
+    "viewDetails": "View Details",
+    "contactUs": "Contact Us",
+    "freeShipping": "Free shipping on all U.S. orders $50+",
+    "flashSale": "Flash Sale Alert: Save Up to 40% - Limited Stock, Act Fast!"
+  },
+  "Footer": {
+    "subscribeTitle": "Subscribe to Our Newsletter",
+    "subscribePlaceholder": "youremail123@gmail.com",
+    "subscribeBtn": "SUBSCRIBE",
+    "description": "Outdoor fiberglass planters crafted at Aurora Pots are designed to embody timeless quality. Made from premium-grade fiberglass, each planter is built to endure the elements...",
+    "learnMore": "Learn More",
+    "support": "Support",
+    "contact": "Contact Us",
+    "hotelRes": "Hotel Reservation",
+    "ticketOffice": "Ticket Office",
+    "rights": "© 2026 Yunlai Porcelain Art Co. Ltd. | All Rights Reserved"
+  },
+  "Insights": {
+    "titlePrefix": "Catalog Stories &",
+    "titleSuffix": "Product Insights",
+    "subtitle": "Your full service partner for interior & exterior landscapes",
+    "explore": "Explore More",
+    "articleTitle": "What Makes Aurora Pots' Outdoor Fiberglass Planters Truly Stand Out?",
+    "articleDesc": "Outdoor fiberglass planters crafted at Aurora Pots are designed to embody timeless quality. Made from premium-grade fiberglass, each planter is built to endure the elements...",
+    "date": "04.11.2025"
+  },
+  "WorksProcess": {
+    "titlePrefix": "Our",
+    "titleSuffix": "Works & Process",
+    "projectTitle": "One&Only Za'abeel, Rooted in Luxury",
+    "location": "Dubai",
+    "date": "12 January, 2025",
+    "processTitlePrefix": "Our",
+    "processTitleSuffix": "Work Process",
+    "steps": {
+      "step1": { "title": "Design Meeting", "desc": "In our initial meeting, we discuss your requirements in detail and develop a customised landscaping solution." },
+      "step2": { "title": "Project Specifications", "desc": "Matching your requirements, we provide you with specifications of all the products you have opted for." },
+      "step3": { "title": "Client Approval", "desc": "If there are no revisions, we proceed to receiving an official approval from you." },
+      "step4": { "title": "Installation & Maintenance", "desc": "Once approved, we move forward with creating your ideal space and maintaining it effectively." }
+    }
+  },
+  "Services": {
+    "titlePrefix": "Our",
+    "titleSuffix": "Services",
+    "subtitle": "Your full service partner for interior & exterior landscapes",
+    "items": {
+      "sampling": { "title": "Pre-Production Sampling", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." },
+      "landscaping": { "title": "Interior & Exterior Landscaping", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." },
+      "greenWall": { "title": "Green Wall", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." }
+    }
+  },
+  "NewToYou": {
+    "titlePrefix": "New",
+    "titleSuffix": "To You",
+    "tabs": {
+      "bestSeller": "Best Seller",
+      "newArrival": "New Arrival",
+      "offer": "Offer",
+      "trending": "Trending",
+      "all": "All Products"
+    },
+    "productName": "Plonta Bloom"
+  },
+  "MeetTheTrends": {
+    "label": "About Us",
+    "titlePart1": "Meet the",
+    "titlePart2": "trends of",
+    "titlePart3": "the season.",
+    "desc": "Apparently we had reached a great height in the atmosphere, for the sky was a dead black and there a stars.",
+    "button": "More About Us"
+  },
+  "FindPot": {
+    "titlePrefix": "Find the",
+    "titleHighlight": "right pot",
+    "titleSuffix": "for your plant",
+    "categories": {
+      "indoor": "Indoor Plants",
+      "outdoor": "Outdoor Plants",
+      "succulents": "Succulents & Cactus",
+      "flowering": "Flowering Plants",
+      "herbs": "Herbs & Kitchen",
+      "large": "Large Plants & Trees",
+      "hanging": "Hanging Plants",
+      "tabletop": "Tabletop & Desk"
+    }
+  }
+}
