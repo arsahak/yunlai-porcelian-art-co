@@ -44,12 +44,12 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/80 backdrop-blur-md shadow-sm py-2 top-0' 
-            : 'bg-transparent py-4 top-[40px] md:top-[36px]'
+            ? 'bg-white shadow-sm py-2' 
+            : 'bg-white py-4'
         }`}
-        initial={{ y: -100 }}
+        initial={{ y: 0 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
       >
@@ -58,9 +58,9 @@ const Navbar = () => {
              <Image 
                src="/assets/site-logo/site-logo.png" 
                alt="Yunlai Porcelain Art" 
-               width={180} 
-               height={50}
-               className="h-10 md:h-12 w-auto object-contain transition-opacity hover:opacity-90"
+               width={550} 
+               height={350}
+               className="h-12 md:h-16 w-auto object-contain transition-opacity hover:opacity-90"
                priority
              />
           </Link>
@@ -121,14 +121,14 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="fixed inset-0 top-[80px] z-40 bg-white/95 backdrop-blur-lg lg:hidden pt-8 px-6"
+          className="fixed inset-0 z-40 bg-white/98 backdrop-blur-lg lg:hidden pt-24 px-6 overflow-y-auto"
         >
-          <div className="flex flex-col space-y-6">
+          <div className="container mx-auto flex flex-col space-y-6 pb-8">
             {navLinks.map((link) => (
               <Link 
                 key={link.name}
                 href={link.href}
-                className="text-2xl font-title text-secondary hover:text-primary transition-colors border-b border-gray-100 pb-4"
+                className="text-xl font-title font-medium text-secondary hover:text-primary transition-colors border-b border-gray-100 pb-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -136,11 +136,14 @@ const Navbar = () => {
             ))}
             
             {/* Mobile Language Switcher */}
-            <div className="flex items-center gap-4 py-4 border-b border-gray-100">
-              <span className="text-secondary font-medium">Language:</span>
+            <div className="flex items-center justify-between py-4 border-b border-gray-100">
+              <span className="text-secondary font-medium">Language</span>
               <button 
-                onClick={toggleLanguage}
-                className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-secondary hover:text-primary"
+                onClick={() => {
+                  toggleLanguage();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full text-secondary hover:text-primary border border-gray-200"
               >
                 <Globe className="w-4 h-4" />
                 <span className="uppercase">{locale === 'en' ? 'English' : '中文'}</span>
@@ -148,7 +151,7 @@ const Navbar = () => {
             </div>
 
             <div className="pt-4">
-              <Button href="/contact" className="w-full">
+              <Button href="/contact" className="w-full justify-center">
                 {commonT.contactUs}
               </Button>
             </div>
