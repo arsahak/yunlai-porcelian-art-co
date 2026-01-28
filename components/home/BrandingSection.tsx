@@ -19,7 +19,7 @@ const brands = [
 const BrandingSection = () => {
   return (
     <ScrollMotion animation="fade-in" delay={0.2}>
-    <section className="w-full bg-[#f4fbf6] py-12 md:py-16 border-b border-gray-100">
+    <section className="w-full bg-[#f4fbf6] py-8 md:py-16 border-b border-gray-100">
       <div className="container mx-auto px-4">
         <Swiper
           modules={[Autoplay]}

@@ -44,11 +44,11 @@ const InsighedSection = () => {
 
   return (
     <ScrollMotion animation="fade-up">
-    <section className="w-full bg-gray-50/50 py-16 md:py-20">
+    <section className="w-full bg-gray-50/50 py-8 md:py-20">
       <div className="container mx-auto px-4">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
-          <div className="max-w-2xl">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 mb-12">
+          <div className="max-w-2xl md:text-left text-center">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-black mb-3">
               {t.titlePrefix} <span className="text-primary">{t.titleSuffix}</span>
             </h2>

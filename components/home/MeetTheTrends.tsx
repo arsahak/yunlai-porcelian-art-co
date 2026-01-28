@@ -12,7 +12,7 @@ const MeetTheTrends = () => {
 
   return (
     <ScrollMotion animation="fade-up">
-    <section className="w-full bg-white py-16 md:py-24 relative overflow-hidden">
+    <section className="w-full bg-white py-8 md:py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
@@ -33,7 +33,7 @@ const MeetTheTrends = () => {
           </div>
 
           {/* Right Side: Content */}
-          <div className="w-full lg:w-1/2 space-y-6">
+          <div className="w-full lg:w-1/2 space-y-6 md:text-left text-center">
             <h4 className="text-primary font-bold uppercase tracking-wider text-sm">
               {t.label}
             </h4>

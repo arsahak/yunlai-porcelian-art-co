@@ -64,7 +64,7 @@ const OurServices = () => {
 
   return (
     <ScrollMotion animation="fade-up">
-    <section className="w-full bg-white py-16 md:py-20">
+    <section className="w-full bg-white py-8 md:py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 max-w-2xl mx-auto">

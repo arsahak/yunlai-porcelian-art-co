@@ -23,7 +23,7 @@ const FindTheRightPot = () => {
 
   return (
     <ScrollMotion animation="fade-up">
-    <section className="w-full bg-[#FAFAFA] py-16 md:py-20">
+    <section className="w-full bg-[#FAFAFA] py-8 md:py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

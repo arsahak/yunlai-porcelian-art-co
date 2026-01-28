@@ -43,7 +43,7 @@ const Footer = () => {
           
           {/* Brand Column */}
           <div className="col-span-1 min-[480px]:col-span-2 lg:col-span-4 space-y-6 text-center lg:text-left">
-            <Link href="/" className="inline-block relative h-16 w-16">
+            <Link href="/" className="inline-block relative h-24 w-24">
                <Image 
                  src="/assets/site-logo/site-logo.png" 
                  alt="Yunlai Porcelain" 

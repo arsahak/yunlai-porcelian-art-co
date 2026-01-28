@@ -30,7 +30,7 @@ const NewToYou = () => {
 
   return (
     <ScrollMotion animation="fade-up">
-    <section className="w-full bg-white py-16 md:py-20 pb-0">
+    <section className="w-full bg-white py-8 md:py-20 pb-0">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-center mb-12 gap-6">

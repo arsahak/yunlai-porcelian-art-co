@@ -3,7 +3,7 @@
 import Button from '@/components/shared/Button';
 import { useLocale, type Locale } from '@/lib/i18n';
 import translations from '@/messages/translations';
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { ChevronDown, Globe, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -116,48 +116,90 @@ const Navbar = () => {
       </motion.nav>
 
       {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="fixed inset-0 z-40 bg-white/98 backdrop-blur-lg lg:hidden pt-24 px-6 overflow-y-auto"
-        >
-          <div className="container mx-auto flex flex-col space-y-6 pb-8">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name}
-                href={link.href}
-                className="text-xl font-title font-medium text-secondary hover:text-primary transition-colors border-b border-gray-100 pb-4"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-            
-            {/* Mobile Language Switcher */}
-            <div className="flex items-center justify-between py-4 border-b border-gray-100">
-              <span className="text-secondary font-medium">Language</span>
-              <button 
-                onClick={() => {
-                  toggleLanguage();
-                  setIsMobileMenuOpen(false);
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={{
+              closed: { 
+                y: '-100%',
+                transition: { 
+                  type: "spring",
+                  stiffness: 400, 
+                  damping: 40 
+                }
+              },
+              open: { 
+                y: 0,
+                transition: { 
+                  type: "spring",
+                  stiffness: 400, 
+                  damping: 40,
+                  staggerChildren: 0.1,
+                  delayChildren: 0.1
+                }
+              }
+            }}
+            className="fixed inset-0 z-40 bg-white lg:hidden pt-24 px-6 overflow-y-auto mt-10"
+          >
+            <div className="container mx-auto flex flex-col space-y-6 pb-8">
+              {navLinks.map((link) => (
+                <motion.div
+                  key={link.name}
+                  variants={{
+                    closed: { opacity: 0, x: -20 },
+                    open: { opacity: 1, x: 0 }
+                  }}
+                >
+                  <Link 
+                    href={link.href}
+                    className="block text-xl font-title font-medium text-secondary hover:text-primary transition-colors border-b border-gray-100 pb-4"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+              
+              {/* Mobile Language Switcher */}
+              <motion.div 
+                variants={{
+                  closed: { opacity: 0, x: -20 },
+                  open: { opacity: 1, x: 0 }
                 }}
-                className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full text-secondary hover:text-primary border border-gray-200"
+                className="flex items-center justify-between py-4 border-b border-gray-100"
               >
-                <Globe className="w-4 h-4" />
-                <span className="uppercase">{locale === 'en' ? 'English' : '中文'}</span>
-              </button>
-            </div>
+                <span className="text-secondary font-medium">Language</span>
+                <button 
+                  onClick={() => {
+                    toggleLanguage();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full text-secondary hover:text-primary border border-gray-200"
+                >
+                  <Globe className="w-4 h-4" />
+                  <span className="uppercase">{locale === 'en' ? 'English' : '中文'}</span>
+                </button>
+              </motion.div>
 
-            <div className="pt-4">
-              <Button href="/contact" className="w-full justify-center">
-                {commonT.contactUs}
-              </Button>
+              <motion.div 
+                variants={{
+                  closed: { opacity: 0, y: 20 },
+                  open: { opacity: 1, y: 0 }
+                }}
+                className="pt-4"
+              >
+                <Button href="/contact" className="w-full justify-center">
+                  {commonT.contactUs}
+                </Button>
+              </motion.div>
             </div>
-          </div>
-        </motion.div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
