@@ -34,11 +34,11 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t.home, href: '/' },
-    { name: t.products, href: '/products', hasDropdown: true },
+    { name: t.products, href: '/products' },
     { name: t.catalog, href: '/catalog' },
     { name: t.blog, href: '/blog' },
-    { name: t.about, href: '/about' },
-    { name: t.contact, href: '/contact' },
+    { name: t.about, href: '/about-us' },
+    { name: t.contact, href: '/contact-us' },
   ];
 
   return (

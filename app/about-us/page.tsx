@@ -1,8 +1,26 @@
+import OurProudNumber from '@/components/about/OurProudNumber';
+import OurService from '@/components/about/OurService';
+import WelcomeSection from '@/components/about/WelcomSection';
+import ImageViewSection from '@/components/shared/ImageViewSection';
+import PageHeroSection from '@/components/shared/PageHeroSection';
 
-const page = () => {
+const AboutPage = () => {
   return (
-    <div>BlogPage</div>
-  )
-}
+    <main>
+      <PageHeroSection 
+        title="About Us" 
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'About Us', href: '/about-us' }
+        ]}
+      />
+      
+     <WelcomeSection/>
+     <OurService/>
+     <OurProudNumber/>
+    <ImageViewSection/>
+    </main>
+  );
+};
 
-export default page
+export default AboutPage;

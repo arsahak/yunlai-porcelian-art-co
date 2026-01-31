@@ -1,8 +1,24 @@
+import ContactForm from '@/components/contact/ContactForm';
+import GoogleMap from '@/components/contact/GoogleMap';
+import ImageViewSection from '@/components/shared/ImageViewSection';
+import PageHeroSection from '@/components/shared/PageHeroSection';
 
-const page = () => {
+const ContactUsPage = () => {
   return (
-    <div>BlogPage</div>
-  )
-}
+    <main>
+       <PageHeroSection 
+        title="Contact Us" 
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Contact Us', href: '/contact-us' }
+        ]}
+      />
+      
+    <ContactForm/>
+    <GoogleMap />
+    <ImageViewSection/>
+    </main>
+  );
+};
 
-export default page
+export default ContactUsPage;

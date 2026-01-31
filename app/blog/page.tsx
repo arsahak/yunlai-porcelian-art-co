@@ -1,8 +1,22 @@
+import BlogGrid from '@/components/blogs/BlogGrid';
+import ImageViewSection from '@/components/shared/ImageViewSection';
+import PageHeroSection from '@/components/shared/PageHeroSection';
 
-const page = () => {
+const BlogPage = () => {
   return (
-    <div>BlogPage</div>
-  )
-}
+    <main>
+      <PageHeroSection 
+        title="Blog" 
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Blog', href: '/blog' }
+        ]}
+      />
+      
+    <BlogGrid/>
+    <ImageViewSection/>
+    </main>
+  );
+};
 
-export default page
+export default BlogPage;
