@@ -82,20 +82,35 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
           setCurrentStock(firstSize.stock);
         }
 
-        // Fetch related products from same category
+        // Fetch related products
+        let productsToShow: Product[] = [];
+        
         if (response.data.category) {
           const relatedResponse = await getProducts({
             category: response.data.category,
             status: 'active',
-            limit: 5,
+            limit: 6, // Fetch a bit more to allow for filtering
           });
           
           if (relatedResponse.success && relatedResponse.data) {
-            // Filter out current product
-            const filtered = relatedResponse.data.filter(p => p._id !== response.data?._id);
-            setRelatedProducts(filtered.slice(0, 5));
+            productsToShow = relatedResponse.data.filter(p => p._id !== response.data?._id);
           }
         }
+        
+        // Fallback: If no related products found (or only the current one was found), fetch generic latest products
+        if (productsToShow.length === 0) {
+            const fallbackResponse = await getProducts({
+                status: 'active',
+                limit: 6,
+                sortBy: 'createdAt',
+                sortOrder: 'desc'
+            });
+            if (fallbackResponse.success && fallbackResponse.data) {
+                productsToShow = fallbackResponse.data.filter(p => p._id !== response.data?._id);
+            }
+        }
+        
+        setRelatedProducts(productsToShow.slice(0, 5));
       }
     } catch (error) {
       console.error('Error fetching product:', error);

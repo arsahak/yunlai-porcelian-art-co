@@ -7,11 +7,14 @@ import Translations from '@/messages/translations';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const ProductGrid = () => {
   const { locale } = useLocale();
   const t = Translations[locale].Product.Grid;
+  const searchParams = useSearchParams();
+  const categorySlug = searchParams.get('category');
 
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
@@ -23,7 +26,7 @@ const ProductGrid = () => {
 
   useEffect(() => {
     fetchProducts();
-  }, [currentPage, sortBy, sortOrder]);
+  }, [currentPage, sortBy, sortOrder, categorySlug]);
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -34,6 +37,7 @@ const ProductGrid = () => {
         status: 'active',
         sortBy,
         sortOrder,
+        category: categorySlug || undefined,
       });
 
       if (response.success && response.data) {

@@ -6,6 +6,7 @@ import { useLocale } from '@/lib/i18n';
 import translations from '@/messages/translations';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 type TabId = 'bestSeller' | 'newArrival' | 'offer' | 'trending' | 'all';
@@ -13,7 +14,7 @@ type TabId = 'bestSeller' | 'newArrival' | 'offer' | 'trending' | 'all';
 const NewToYou = () => {
   const { locale } = useLocale();
   const t = translations[locale].NewToYou;
-  const [activeTab, setActiveTab] = useState<TabId>('bestSeller');
+  const [activeTab, setActiveTab] = useState<TabId>('all');
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -127,7 +128,11 @@ const NewToYou = () => {
         {!loading && products.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {products.map((product) => (
-              <div key={product._id} className="group cursor-pointer">
+              <Link 
+                href={`/products/${product.slug || product._id}`} 
+                key={product._id} 
+                className="group cursor-pointer block"
+              >
                 {/* Image Card */}
                 <div className="bg-[#FAFAFA] rounded-3xl p-6 mb-4 aspect-square flex items-center justify-center relative overflow-hidden transition-all duration-300 group-hover:bg-[#F0FDF4]">
                   <div className="w-full h-full relative">
@@ -193,7 +198,7 @@ const NewToYou = () => {
                     )}
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}
@@ -201,7 +206,7 @@ const NewToYou = () => {
         {/* Empty State */}
         {!loading && products.length === 0 && (
           <div className="text-center py-16">      
-            <p className="text-gray-500 text-lg mb-2">No products found in this category</p>
+            <p className="text-gray-500 text-lg mb-2">No {tabs.find(t => t.id === activeTab)?.label} products found</p>
           </div>
         )}
       </div>
