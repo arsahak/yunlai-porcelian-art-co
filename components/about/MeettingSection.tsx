@@ -1,8 +1,14 @@
 "use client";
 
+import ScrollMotion from '@/components/motion/ScrollMotion';
+import { useLocale } from '@/lib/i18n';
+import Translations from '@/messages/translations';
 import Image from 'next/image';
 
 const MeettingSection = () => {
+  const { locale } = useLocale();
+  const t = Translations[locale].AboutUs.Meeting;
+
   // Using the generated images to populate the grid
   const images = [
     {
@@ -43,13 +49,14 @@ const MeettingSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <ScrollMotion animation="fade-up">
+    <section className="py-8 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-title text-gray-900">
-            Meeting with <span className="text-primary">customers</span>
+            {t.titlePrefix} <span className="text-primary">{t.titleHighlight}</span>
           </h2>
         </div>
 
@@ -74,6 +81,7 @@ const MeettingSection = () => {
 
       </div>
     </section>
+    </ScrollMotion>
   );
 };
 

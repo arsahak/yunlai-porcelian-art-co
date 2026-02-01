@@ -1,34 +1,41 @@
 "use client";
 
+import ScrollMotion from '@/components/motion/ScrollMotion';
+import { useLocale } from '@/lib/i18n';
+import Translations from '@/messages/translations';
 import { Award, Globe, Package, PenTool } from 'lucide-react';
 import Image from 'next/image';
 
 const CatalogBar = () => {
+  const { locale } = useLocale();
+  const t = Translations[locale].Catalog.Bar;
+
   const features = [
     {
       icon: <Globe className="w-8 h-8 text-gray-800" strokeWidth={1.5} />,
-      title: "Global Delivery",
+      title: t.features.global,
     },
     {
       icon: <PenTool className="w-8 h-8 text-gray-800" strokeWidth={1.5} />,
-      title: "Design & Prototyping",
+      title: t.features.design,
     },
     {
       icon: <Award className="w-8 h-8 text-gray-800" strokeWidth={1.5} />,
-      title: "Premium Quality",
+      title: t.features.quality,
     },
     {
       icon: <Package className="w-8 h-8 text-gray-800" strokeWidth={1.5} />,
-      title: "Complete Packaging",
+      title: t.features.packaging,
     }
   ];
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <ScrollMotion animation="fade-up">
+    <section className="relative py-8 md:py-20 overflow-hidden">
       {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/assets/home/catalog_bar_bg_1769839404126.png"
+          src="/assets/catalog/groupbg.png"
           alt="Dark Pottery Background"
           fill
           className="object-cover object-center"
@@ -55,6 +62,7 @@ const CatalogBar = () => {
         </div>
       </div>
     </section>
+    </ScrollMotion>
   );
 };
 

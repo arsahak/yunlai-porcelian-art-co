@@ -1,5 +1,8 @@
 "use client";
 
+import ScrollMotion from '@/components/motion/ScrollMotion';
+import { useLocale } from '@/lib/i18n';
+import Translations from '@/messages/translations';
 import { useMemo, useState } from 'react';
 import { ComposableMap, Geographies, Geography, Graticule, Sphere } from "react-simple-maps";
 import { Tooltip } from "react-tooltip";
@@ -8,12 +11,14 @@ const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 const OurProudNumber = () => {
   const [content, setContent] = useState("");
+  const { locale } = useLocale();
+  const t = Translations[locale].AboutUs.ProudNumbers;
 
   const stats = [
-    { value: "15+", label: "Years of Experience" },
-    { value: "3", label: "Factories" },
-    { value: "99%", label: "Customer Retention Rate" },
-    { value: "500+", label: "Worldwide Successful Projects" }
+    { value: "15+", label: t.stats.experience },
+    { value: "3", label: t.stats.factories },
+    { value: "99%", label: t.stats.retention },
+    { value: "500+", label: t.stats.projects }
   ];
 
   // ISO 3166-1 numeric codes for highlighted countries
@@ -25,16 +30,17 @@ const OurProudNumber = () => {
   ], []);
 
   return (
-    <section className="py-20 md:py-28 bg-white overflow-hidden">
+    <ScrollMotion animation="fade-up">
+    <section className="py-8 md:py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-title text-gray-900 mb-2">
-            Our Proud Numbers &
+            {t.titlePrefix}
           </h2>
           <span className="text-4xl md:text-5xl font-title text-primary">
-            Markets
+            {t.titleHighlight}
           </span>
         </div>
 
@@ -58,7 +64,7 @@ const OurProudNumber = () => {
         </div>
 
         {/* World Map */}
-        <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center bg-gray-50/10 rounded-3xl overflow-hidden border border-gray-100/50">
+        <div className="relative w-full h-[250px] md:h-[500px] lg:h-[600px] flex items-center justify-center bg-gray-50/10 rounded-3xl overflow-hidden border border-gray-100/50">
           <ComposableMap 
             projection="geoEqualEarth"
             projectionConfig={{ 
@@ -73,7 +79,7 @@ const OurProudNumber = () => {
            <Sphere stroke="#D4E7D9" strokeWidth={0.5} id="sphere" fill="transparent" />
            <Graticule stroke="#D4E7D9" strokeWidth={0.5} />
             <Geographies geography={geoUrl}>
-              {({ geographies }) =>
+              {({ geographies }: { geographies: any[] }) =>
                 geographies.map((geo) => {
                   const isHighlighted = highlightedCountries.includes(geo.id);
                   return (
@@ -113,6 +119,7 @@ const OurProudNumber = () => {
 
       </div>
     </section>
+    </ScrollMotion>
   );
 };
 

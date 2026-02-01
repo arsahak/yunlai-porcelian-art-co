@@ -1,6 +1,9 @@
 "use client";
 
 import { getProduct, getProducts, Product } from '@/app/actions/products';
+import ScrollMotion from '@/components/motion/ScrollMotion';
+import { useLocale } from '@/lib/i18n';
+import Translations from '@/messages/translations';
 import { ChevronDown, ChevronUp, Heart, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,6 +14,9 @@ interface ProductDetailsProps {
 }
 
 const ProductDetails = ({ slug }: ProductDetailsProps) => {
+  const { locale } = useLocale();
+  const t = Translations[locale].Product.Details;
+
   const [product, setProduct] = useState<Product | null>(null);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
@@ -86,7 +92,7 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
           
           if (relatedResponse.success && relatedResponse.data) {
             // Filter out current product
-            const filtered = relatedResponse.data.filter(p => p._id !== response.data._id);
+            const filtered = relatedResponse.data.filter(p => p._id !== response.data?._id);
             setRelatedProducts(filtered.slice(0, 5));
           }
         }
@@ -156,10 +162,10 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
   if (!product) {
     return (
       <div className="container mx-auto px-4 py-12 text-center">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h2>
-        <p className="text-gray-600 mb-8">The product you're looking for doesn't exist.</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">{t.notFound}</h2>
+        <p className="text-gray-600 mb-8">{t.notFoundDesc}</p>
         <Link href="/products" className="text-primary hover:underline">
-          Browse All Products
+          {t.browseAll}
         </Link>
       </div>
     );
@@ -168,7 +174,8 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
   const discountPercent = getDiscountPercentage();
 
   return (
-    <div className="container mx-auto px-4 py-12 md:py-20">
+    <ScrollMotion animation="fade-up">
+    <div className="container mx-auto px-4 py-8 md:py-20">
       {/* Top Section: Gallery & Details */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
         
@@ -207,7 +214,7 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
               {/* Discount Badge */}
               {discountPercent > 0 && (
                 <span className="bg-red-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                  -{discountPercent}% OFF
+                  -{discountPercent}% {t.off}
                 </span>
               )}
             </div>
@@ -215,7 +222,7 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
             {/* Stock Badge */}
             {currentStock === 0 && (
               <div className="absolute top-4 right-4 bg-red-500 text-white text-sm px-3 py-1 rounded-full font-semibold">
-                OUT OF STOCK
+                {t.outOfStock.toUpperCase()}
               </div>
             )}
           </div>
@@ -260,7 +267,7 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
                   ${currentComparePrice.toFixed(2)}
                 </span>
                 <span className="bg-red-100 text-red-600 px-2 py-1 rounded text-sm font-semibold">
-                  Save ${(currentComparePrice - currentPrice).toFixed(2)}
+                  {t.save} ${(currentComparePrice - currentPrice).toFixed(2)}
                 </span>
               </>
             )}
@@ -273,21 +280,21 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
           {/* Stock & SKU Info */}
           <div className="space-y-1 text-sm mb-8">
             <p className="text-gray-700">
-              <span className="font-medium">SKU:</span> {selectedSize && product.sizeVariants ? 
+              <span className="font-medium">{t.sku}</span> {selectedSize && product.sizeVariants ? 
                 product.sizeVariants.find(v => v.size === selectedSize)?.sku || product.sku 
                 : product.sku}
             </p>
             <p className="text-gray-700">
-              <span className="font-medium">Category:</span> {product.category}
+              <span className="font-medium">{t.category}</span> {product.category}
             </p>
             <p className={`font-medium ${currentStock > 0 ? 'text-green-600' : 'text-red-600'}`}>
               {currentStock > 0 ? (
                 <>
-                  {currentStock} in stock
-                  {currentStock <= 10 && <span className="text-orange-500 ml-2">(Low Stock)</span>}
+                  {currentStock} {t.inStock}
+                  {currentStock <= 10 && <span className="text-orange-500 ml-2">{t.lowStock}</span>}
                 </>
               ) : (
-                'Out of stock'
+                t.outOfStock
               )}
             </p>
           </div>
@@ -300,7 +307,7 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
             {product.colorVariants && product.colorVariants.length > 0 && (
               <div>
                 <span className="text-sm font-semibold text-gray-900 block mb-3">
-                  Color: <span className="font-normal text-gray-600">{selectedColor}</span>
+                  {t.color} <span className="font-normal text-gray-600">{selectedColor}</span>
                 </span>
                 <div className="flex items-center gap-3 flex-wrap">
                   {product.colorVariants.map((variant) => (
@@ -329,7 +336,7 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
             {product.sizeVariants && product.sizeVariants.length > 0 && (
               <div>
                 <span className="text-sm font-semibold text-gray-900 block mb-3">
-                  Size: <span className="font-normal text-gray-600">{selectedSize}</span>
+                  {t.size} <span className="font-normal text-gray-600">{selectedSize}</span>
                 </span>
                 <div className="flex items-center gap-3 flex-wrap">
                   {product.sizeVariants.map((variant) => (
@@ -354,7 +361,7 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
                   ))}
                 </div>
                 <p className="text-xs text-gray-500 mt-2">
-                  * Price varies by size
+                  {t.priceVaries}
                 </p>
               </div>
             )}
@@ -396,7 +403,7 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
                 className="flex-1 h-12 bg-gradient-to-b from-[#3DA754] to-[#28883D] hover:from-[#44bd5e] hover:to-[#2f9e47] text-white font-medium rounded-full shadow-md transition-all active:scale-[0.98] flex items-center justify-center gap-2"
               >
                 <ShoppingCart className="w-5 h-5" />
-                Contact Us
+                {t.contactUs}
               </Link>
 
               {/* Wishlist Button */}
@@ -412,7 +419,7 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
       {relatedProducts.length > 0 && (
         <div className="border-t border-gray-100 pt-16">
           <h2 className="text-3xl md:text-4xl font-title text-center mb-12">
-            Related <span className="text-primary">Products</span>
+            {t.relatedTitle} <span className="text-primary">{t.relatedSubtitle}</span>
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -449,7 +456,9 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
         </div>
       )}
     </div>
+    </ScrollMotion>
   );
 };
+
 
 export default ProductDetails;

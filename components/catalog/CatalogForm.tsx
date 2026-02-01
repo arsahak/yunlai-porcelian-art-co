@@ -1,9 +1,16 @@
 "use client";
 
+import ScrollMotion from '@/components/motion/ScrollMotion';
+import { useLocale } from '@/lib/i18n';
+import Translations from '@/messages/translations';
+import emailjs from '@emailjs/browser';
 import Image from 'next/image';
 import { useState } from 'react';
 
 const CatalogForm = () => {
+  const { locale } = useLocale();
+  const t = Translations[locale].Catalog.Form;
+
   const [formData, setFormData] = useState({
     company: '',
     name: '',
@@ -16,15 +23,16 @@ const CatalogForm = () => {
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 
   // Catalog options matching the design
   const catalogOptions = [
-    'Outdoor Pottery',
-    'Indoor Pottery & Terracotta',
-    'Fiberglass & Fiberstone',
-    'Fibercement',
-    'Metal',
-    'Wicker'
+    t.options.outdoor,
+    t.options.indoor,
+    t.options.fiberglass,
+    t.options.fibercement,
+    t.options.metal,
+    t.options.wicker
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,12 +52,42 @@ const CatalogForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setLoading(false);
-    setSubmitted(true);
+    setStatus(null);
+
+    const templateParams = {
+        company: formData.company,
+        from_name: formData.name,
+        country: formData.country,
+        from_email: formData.email,
+        phone: formData.phone,
+        is_customer: formData.isCustomer === 'yes' ? t.options.yes : t.options.no,
+        catalogs: formData.catalogs.join(', '),
+        date: new Date().toLocaleString(),
+    };
+
+    try {
+      await emailjs.send(
+        'service_xh718mb',
+        'template_01i8v0b',
+        templateParams,
+        'JSTIICpi4oohGdpyw'
+      );
+      setSubmitted(true);
+      setFormData({
+        company: '',
+        name: '',
+        country: '',
+        email: '',
+        phone: '',
+        isCustomer: 'no',
+        catalogs: []
+      });
+    } catch (error) {
+       console.error('FAILED...', error);
+       setStatus({ type: 'error', message: t.error });
+    } finally {
+        setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -61,15 +99,15 @@ const CatalogForm = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-3xl font-title text-gray-900 mb-4">Thank You!</h2>
+          <h2 className="text-3xl font-title text-gray-900 mb-4">{t.success.title}</h2>
           <p className="text-gray-600 text-lg mb-8">
-            We've received your request. Our team will send the selected catalogs to your email shortly.
+            {t.success.message}
           </p>
           <button 
             onClick={() => setSubmitted(false)}
             className="text-primary font-medium hover:underline"
           >
-            Send another request
+            {t.success.button}
           </button>
         </div>
       </div>
@@ -77,14 +115,15 @@ const CatalogForm = () => {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <ScrollMotion animation="fade-up">
+    <section className="py-8 md:py-20 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-title text-gray-900 leading-tight">
-            Get in touch to explore our catalog. We're happy <br className="hidden md:block"/>
-            to <span className="text-primary italic">help you find the right products.</span>
+            {t.header.main} <br className="hidden md:block"/>
+            {t.header.sub} <span className="text-primary italic">{t.header.subItalic}</span>
           </h2>
         </div>
 
@@ -96,7 +135,7 @@ const CatalogForm = () => {
              {/* Note: In a real implementation, replace this with the actual illustration path */}
              <div className="relative w-full h-full min-h-[300px] md:min-h-full">
                 <Image
-                  src="/assets/home/ceramic_catalog_illustration_1769839278250.png" 
+                  src="/assets/catalog/catalogbg.png" 
                   alt="Ceramic Catalog Illustration"
                   fill
                   className="object-contain object-center scale-95 hover:scale-100 transition-transform duration-700"
@@ -120,7 +159,7 @@ const CatalogForm = () => {
                     type="text" 
                     name="company"
                     required
-                    placeholder="Your Company *"
+                    placeholder={t.fields.company}
                     className="w-full bg-transparent border-b border-gray-300 py-3 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-primary transition-colors"
                     value={formData.company}
                     onChange={handleInputChange}
@@ -134,7 +173,7 @@ const CatalogForm = () => {
                       type="text" 
                       name="name"
                       required
-                      placeholder="Your Name *"
+                      placeholder={t.fields.name}
                       className="w-full bg-transparent border-b border-gray-300 py-3 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-primary transition-colors"
                       value={formData.name}
                       onChange={handleInputChange}
@@ -145,7 +184,7 @@ const CatalogForm = () => {
                       type="text" 
                       name="country"
                       required
-                      placeholder="Your Country *"
+                      placeholder={t.fields.country}
                       className="w-full bg-transparent border-b border-gray-300 py-3 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-primary transition-colors"
                       value={formData.country}
                       onChange={handleInputChange}
@@ -159,7 +198,7 @@ const CatalogForm = () => {
                     type="email" 
                     name="email"
                     required
-                    placeholder="Your Email *"
+                    placeholder={t.fields.email}
                     className="w-full bg-transparent border-b border-gray-300 py-3 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-primary transition-colors"
                     value={formData.email}
                     onChange={handleInputChange}
@@ -171,7 +210,7 @@ const CatalogForm = () => {
                  <input 
                     type="tel" 
                     name="phone"
-                    placeholder="Your Phone Number"
+                    placeholder={t.fields.phone}
                     className="w-full bg-transparent border-b border-gray-300 py-3 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-primary transition-colors"
                     value={formData.phone}
                     onChange={handleInputChange}
@@ -181,7 +220,7 @@ const CatalogForm = () => {
               <div className="pt-4 space-y-4">
                 {/* Existing Customer */}
                 <div>
-                   <label className="block text-gray-900 text-sm font-medium mb-3">Already an Pots customer?</label>
+                   <label className="block text-gray-900 text-sm font-medium mb-3">{t.fields.isCustomer}</label>
                    <div className="flex gap-6">
                       <label className="flex items-center gap-2 cursor-pointer group">
                         <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${formData.isCustomer === 'no' ? 'border-primary' : 'border-gray-400 group-hover:border-gray-600'}`}>
@@ -195,7 +234,7 @@ const CatalogForm = () => {
                            onChange={handleInputChange}
                            className="hidden"
                         />
-                        <span className="text-gray-700 text-sm">No</span>
+                        <span className="text-gray-700 text-sm">{t.options.no}</span>
                       </label>
                       <label className="flex items-center gap-2 cursor-pointer group">
                         <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${formData.isCustomer === 'yes' ? 'border-primary' : 'border-gray-400 group-hover:border-gray-600'}`}>
@@ -209,14 +248,14 @@ const CatalogForm = () => {
                            onChange={handleInputChange}
                            className="hidden"
                         />
-                        <span className="text-gray-700 text-sm">Yes</span>
+                        <span className="text-gray-700 text-sm">{t.options.yes}</span>
                       </label>
                    </div>
                 </div>
 
                 {/* Catalogs */}
                 <div>
-                  <label className="block text-gray-900 text-sm font-medium mb-3">Which catalogs you want to receive?</label>
+                  <label className="block text-gray-900 text-sm font-medium mb-3">{t.fields.whichCatalogs}</label>
                   <div className="grid grid-cols-1 gap-2">
                     {catalogOptions.map((option) => (
                       <label key={option} className="flex items-center gap-3 cursor-pointer group py-1">
@@ -247,8 +286,13 @@ const CatalogForm = () => {
                   disabled={loading}
                   className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
                  >
-                   {loading ? 'Sending...' : 'Send Message'}
+                   {loading ? t.fields.sending : t.fields.submit}
                  </button>
+                 {status && (
+                    <div className={`mt-4 text-sm font-medium ${status.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+                      {status.message}
+                    </div>
+                 )}
               </div>
 
             </form>
@@ -257,6 +301,7 @@ const CatalogForm = () => {
         </div>
       </div>
     </section>
+    </ScrollMotion>
   );
 };
 

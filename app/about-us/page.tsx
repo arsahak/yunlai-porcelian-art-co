@@ -1,6 +1,7 @@
 import OurProudNumber from '@/components/about/OurProudNumber';
 import OurService from '@/components/about/OurService';
 import WelcomeSection from '@/components/about/WelcomSection';
+import AIRevolutionClick from '@/components/shared/AIRevolutionClick';
 import ImageViewSection from '@/components/shared/ImageViewSection';
 import PageHeroSection from '@/components/shared/PageHeroSection';
 
@@ -19,6 +20,7 @@ const AboutPage = () => {
      <OurService/>
      <OurProudNumber/>
     <ImageViewSection/>
+    <AIRevolutionClick/>
     </main>
   );
 };

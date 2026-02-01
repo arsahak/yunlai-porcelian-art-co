@@ -2,7 +2,6 @@ import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import Topbar from "@/components/layout/Topbar";
 import LocaleProvider from "@/components/shared/LocaleProvider";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -19,9 +18,9 @@ const kefirMedium = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Yunlai Porcelain Art Co.",
-  description: "Beautiful collection of Yunlai porcelain art",
+
+export const metadata = {
+  metadataBase: new URL("https://yunlai-porcelian-art-co.vercel.app"),
 };
 
 export default function RootLayout({

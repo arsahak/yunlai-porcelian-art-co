@@ -200,10 +200,8 @@ const NewToYou = () => {
 
         {/* Empty State */}
         {!loading && products.length === 0 && (
-          <div className="text-center py-16">
-            <div className="mb-4 text-6xl">🔍</div>
+          <div className="text-center py-16">      
             <p className="text-gray-500 text-lg mb-2">No products found in this category</p>
-            <p className="text-gray-400 text-sm">Try selecting a different tab</p>
           </div>
         )}
       </div>

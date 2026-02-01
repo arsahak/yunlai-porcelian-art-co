@@ -27,6 +27,7 @@
     "subscribeTitle": "订阅我们的通讯",
     "subscribePlaceholder": "youremail123@gmail.com",
     "subscribeBtn": "订阅",
+    "sending": "发送中...",
     "description": "Aurora Pots 制造的户外玻璃纤维花盆旨在体现永恒的品质。由优质玻璃纤维制成，每个花盆都能承受各种恶劣天气...",
     "learnMore": "了解更多",
     "support": "客户支持",
@@ -102,6 +103,182 @@
       "large": "大型植物与树木",
       "hanging": "悬挂植物",
       "tabletop": "桌面植物"
+    }
+  },
+  "ContactForm": {
+    "title": "与我们联系。",
+    "subtitle": "我们要在这里为您服务。",
+    "company": "您的公司",
+    "companyPlaceholder": "",
+    "name": "您的姓名",
+    "namePlaceholder": "",
+    "country": "您的国家",
+    "countryPlaceholder": "",
+    "email": "您的邮箱",
+    "emailPlaceholder": "",
+    "phone": "您的电话号码",
+    "phonePlaceholder": "",
+    "message": "留言",
+    "messagePlaceholder": "",
+    "sending": "发送中...",
+    "sendButton": "发送信息",
+    "success": "信息发送成功！我们将尽快回复您。",
+    "error": "发送信息失败。请稍后再试。",
+    "infoTitle": "联系方式",
+    "infoSubtitle": "我们随时乐意为您服务",
+    "infoCardTitle": "联系信息",
+    "emailLabel": "电子邮箱",
+    "phoneLabel": "电话号码",
+    "socialLabel": "社交媒体",
+    "addressCardTitle": "地址",
+    "addressLabel": "地址",
+    "addressValue": "胡志明市平盛区第14坊丁部领街8/42号。",
+    "workingTimeLabel": "工作时间",
+    "workingTimeValue": "周一至周五。上午9点至下午6点"
+  },
+  "AboutUs": {
+    "Welcome": {
+      "titlePart1": "欢迎来到",
+      "titlePart2": "云莱",
+      "titlePart3": "陶瓷艺术有限公司",
+      "p1": "云莱陶瓷艺术有限公司是一家专业的瓷器和花盆制造商，拥有超过15年的生产和出口高品质陶瓷花盆到全球市场的经验。",
+      "p2": "从最初作为传统的手工瓷器作坊，我们稳步发展以满足国际客户的精致需求，并于2007年正式扩展到出口业务。",
+      "p3": "今天，云莱拥有三个现代化生产设施，月产能高达60个出口集装箱。我们自豪地与北美、欧洲、澳大利亚和中东的客户保持长期合作伙伴关系，包括美国、德国、西班牙、澳大利亚和卡塔尔等市场。我们的持续增长源于对工艺的深深尊重、始终如一的质量控制以及建立有意义、持久的全球关系的承诺。"
+    },
+    "Meeting": {
+      "titlePrefix": "会见",
+      "titleHighlight": "客户"
+    },
+    "Services": {
+      "titlePrefix": "我们的",
+      "titleHighlight": "服务",
+      "items": {
+        "sampling": {
+          "title": "生产前打样",
+          "desc": "我们的打样服务允许客户在生产开始前完善每一个细节——从形状和比例到纹理和表面处理。每个原型都由我们的熟练工匠和技术团队精确制作，确保最终设计在质量和美学上完全符合您的愿景。"
+        },
+        "customization": {
+          "title": "自有品牌与品牌定制",
+          "desc": "我们的定制标志服务允许客户通过印刷或雕刻标志、品牌贴纸、吊牌或金属标签来个性化他们的产品——所有这些都根据您的规格量身定制。无论您是想要极简系列的微妙品牌标识，还是零售展示的大胆标记，我们的团队都确保每件产品的应用精确且质量一致。"
+        }
+      },
+      "learnMore": "了解更多"
+    },
+    "ProudNumbers": {
+      "titlePrefix": "我们引以为傲的数字 &",
+      "titleHighlight": "市场",
+      "stats": {
+        "experience": "多年经验",
+        "factories": "家工厂",
+        "retention": "客户保留率",
+        "projects": "全球成功项目"
+      }
+    }
+  },
+  "AIRevolution": {
+    "title": "AI革命 点击点燃。",
+    "desc": "体验我们的AI增强设计能力带来的瓷器工艺未来。",
+    "contactBtn": "联系我们",
+    "learnMoreBtn": "了解更多"
+  },
+  "Blog": {
+    "Grid": {
+      "title": "目录故事与",
+      "subtitle": "产品见解",
+      "sort": {
+        "newest": "最新发布",
+        "oldest": "最早发布",
+        "nameAsc": "名称 A-Z",
+        "nameDesc": "名称 Z-A"
+      },
+      "noPosts": "未找到博客文章",
+      "readMore": "阅读更多"
+    },
+    "Details": {
+      "backToBlog": "返回博客",
+      "notFound": "未找到博客文章",
+      "notFoundDesc": "您正在寻找的文章不存在或已被移除。",
+      "readTime": "5分钟阅读",
+      "by": "作者",
+      "latestStories": "最新故事",
+      "noRecent": "暂无最近文章。",
+      "viewAll": "查看所有文章"
+    }
+  },
+  "Catalog": {
+    "Bar": {
+      "features": {
+        "global": "全球配送",
+        "design": "设计与原型制作",
+        "quality": "优质品质",
+        "packaging": "完整包装"
+      }
+    },
+    "Form": {
+      "success": {
+        "title": "谢谢！",
+        "message": "我们已收到您的请求。我们的团队将很快将选定的目录发送到您的电子邮件。",
+        "button": "发送另一个请求"
+      },
+      "error": "发送请求失败。请稍后再试。",
+      "header": {
+        "main": "联系我们探索我们的目录。我们很高兴",
+        "sub": "",
+        "subItalic": "帮助您找到合适的产品。"
+      },
+      "fields": {
+        "company": "您的公司 *",
+        "name": "您的姓名 *",
+        "country": "您的国家 *",
+        "email": "您的电子邮箱 *",
+        "phone": "您的电话号码",
+        "isCustomer": "已经是 Pots 客户？",
+        "whichCatalogs": "您想收到哪些目录？",
+        "submit": "发送信息",
+        "sending": "发送中..."
+      },
+      "options": {
+        "yes": "是",
+        "no": "否",
+        "outdoor": "户外陶艺",
+        "indoor": "室内陶艺与红陶",
+        "fiberglass": "玻璃纤维与纤维石",
+        "fibercement": "纤维水泥",
+        "metal": "金属",
+        "wicker": "藤编"
+      }
+    }
+  },
+  "Product": {
+    "Grid": {
+      "title": "所有",
+      "subtitle": "产品",
+      "sort": {
+        "newest": "最新发布",
+        "nameAsc": "名称 A-Z",
+        "priceAsc": "价格从低到高",
+        "priceDesc": "价格从高到低"
+      },
+      "noProducts": "未找到产品",
+      "outOfStock": "缺货"
+    },
+    "Details": {
+      "notFound": "未找到产品",
+      "notFoundDesc": "您正在寻找的产品不存在。",
+      "browseAll": "浏览所有产品",
+      "save": "节省",
+      "sku": "SKU:",
+      "category": "类别:",
+      "inStock": "库存",
+      "lowStock": "(库存紧张)",
+      "outOfStock": "缺货",
+      "color": "颜色:",
+      "size": "尺寸:",
+      "priceVaries": "*价格因尺寸而异",
+      "contactUs": "联系我们",
+      "relatedTitle": "相关",
+      "relatedSubtitle": "产品",
+      "off": "优惠"
     }
   }
 }

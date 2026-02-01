@@ -1,10 +1,17 @@
 "use client";
 
+import ScrollMotion from '@/components/motion/ScrollMotion';
+import { useLocale } from '@/lib/i18n';
+import Translations from '@/messages/translations';
 import Image from 'next/image';
 
 const WelcomeSection = () => {
+  const { locale } = useLocale();
+  const t = Translations[locale].AboutUs.Welcome;
+
   return (
-    <section className="py-20 md:py-28 bg-white overflow-hidden">
+    <ScrollMotion animation="fade-up">
+    <section className="py-8 md:py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         
         {/* Top Section: Image & Text */}
@@ -30,18 +37,18 @@ const WelcomeSection = () => {
             
             <div className="lg:pl-6">
               <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-8 leading-tight">
-                Welcome To <span className="text-primary">Yunlai <br className="hidden lg:block"/> Porcelain Art Co. Ltd.</span>
+                {t.titlePart1} <span className="text-primary">{t.titlePart2} <br className="hidden lg:block"/> {t.titlePart3}</span>
               </h2>
               
               <div className="space-y-6 text-gray-600 leading-relaxed md:text-lg font-light">
                 <p>
-                  Yunlai Porcelain Art Co. Ltd. is a professional porcelain and planter manufacturer with over 15 years of experience in producing and exporting high-quality ceramic planters to global markets.
+                  {t.p1}
                 </p>
                 <p>
-                  From our beginnings as a traditional handcrafted porcelain workshop, we have steadily evolved to meet the refined demands of international customers, officially expanding into export operations in 2007.
+                  {t.p2}
                 </p>
                 <p className="text-base text-gray-500 pt-2">
-                  Today, Yunlai operates three modern production facilities with a monthly capacity of up to 60 export containers. We proudly maintain long-term partnerships with clients across North America, Europe, Australia, and the Middle East, including markets such as the United States, Germany, Spain, Australia, and Qatar. Our continued growth is driven by a deep respect for craftsmanship, consistent quality control, and a commitment to building meaningful, long-lasting global relationships.
+                  {t.p3}
                 </p>
               </div>
             </div>
@@ -65,6 +72,7 @@ const WelcomeSection = () => {
 
       </div>
     </section>
+    </ScrollMotion>
   );
 };
 

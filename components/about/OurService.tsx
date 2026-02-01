@@ -1,19 +1,25 @@
 "use client";
 
+import ScrollMotion from '@/components/motion/ScrollMotion';
+import { useLocale } from '@/lib/i18n';
+import Translations from '@/messages/translations';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const OurService = () => {
+  const { locale } = useLocale();
+  const t = Translations[locale].AboutUs.Services;
+
   const services = [
     {
-      title: "Pre-Production Sampling",
-      description: "Our sampling service allows clients to refine every detail before production begins—from shape and proportion to texture and finish. Each prototype is crafted with precision by our skilled artisans and technical team, ensuring the final design perfectly matches your vision in both quality and aesthetics.",
+      title: t.items.sampling.title,
+      description: t.items.sampling.desc,
       image: "/assets/about/service1.png",
       link: "/contact-us"
     },
     {
-      title: "Private Label & Brand Customization",
-      description: "Our custom logo service allows clients to personalize their products with printed or engraved logos, branded stickers, hang tags, or metal labels—all tailored to your specifications. Whether you want subtle branding for a minimalist collection or bold marks for retail presentation, our team ensures precise application and consistent quality across every piece.",
+      title: t.items.customization.title,
+      description: t.items.customization.desc,
       image: "/assets/about/service1.png",
       link: "/contact-us"
     }
@@ -23,7 +29,8 @@ const OurService = () => {
   const displayServices = [...services, ...services]; 
 
   return (
-    <section className="py-20 bg-gray-50 relative overflow-hidden">
+    <ScrollMotion animation="fade-up">
+    <section className="py-8 md:py-20 bg-gray-50 relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -38,7 +45,7 @@ const OurService = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-title text-gray-900">
-            Our <span className="text-primary">Services</span>
+            {t.titlePrefix} <span className="text-primary">{t.titleHighlight}</span>
           </h2>
         </div>
 
@@ -70,7 +77,7 @@ const OurService = () => {
                     href={service.link}
                     className="inline-block text-primary font-medium hover:underline underline-offset-4 transition-all"
                   >
-                    Learn More
+                    {t.learnMore}
                   </Link>
                 </div>
               </div>
@@ -79,6 +86,7 @@ const OurService = () => {
         </div>
       </div>
     </section>
+    </ScrollMotion>
   );
 };
 

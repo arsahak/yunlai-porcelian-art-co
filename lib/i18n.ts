@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext } from 'react';
 
 type Locale = 'en' | 'cn';
@@ -13,3 +15,4 @@ export const LocaleContext = createContext<{
 export const useLocale = () => useContext(LocaleContext);
 
 export type { Locale };
+

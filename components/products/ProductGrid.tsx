@@ -1,12 +1,18 @@
 "use client";
 
 import { getProducts, Product } from '@/app/actions/products';
+import ScrollMotion from '@/components/motion/ScrollMotion';
+import { useLocale } from '@/lib/i18n';
+import Translations from '@/messages/translations';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const ProductGrid = () => {
+  const { locale } = useLocale();
+  const t = Translations[locale].Product.Grid;
+
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -118,11 +124,12 @@ const ProductGrid = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <ScrollMotion animation="fade-up">
+    <div className="container mx-auto px-4 py-8 md:py-20">
       {/* Header & Sort */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-4">
         <h2 className="text-3xl md:text-4xl font-title">
-          All <span className="text-primary">Products</span>
+          {t.title} <span className="text-primary">{t.subtitle}</span>
         </h2>
         
         <div className="relative">
@@ -135,10 +142,10 @@ const ProductGrid = () => {
               backgroundSize: `1.5em 1.5em`
             }}
           >
-            <option value="newest">Newest First</option>
-            <option value="name-asc">Name A-Z</option>
-            <option value="price-asc">Price Low to High</option>
-            <option value="price-desc">Price High to Low</option>
+            <option value="newest">{t.sort.newest}</option>
+            <option value="name-asc">{t.sort.nameAsc}</option>
+            <option value="price-asc">{t.sort.priceAsc}</option>
+            <option value="price-desc">{t.sort.priceDesc}</option>
           </select>
         </div>
       </div>
@@ -197,7 +204,7 @@ const ProductGrid = () => {
                     {/* Stock Badge */}
                     {product.stock === 0 && (
                       <div className="absolute top-3 right-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                        OUT OF STOCK
+                        {t.outOfStock}
                       </div>
                     )}
                   </div>
@@ -265,10 +272,11 @@ const ProductGrid = () => {
         </>
       ) : (
         <div className="text-center py-16">
-          <p className="text-gray-500 text-lg">No products found</p>
+          <p className="text-gray-500 text-lg">{t.noProducts}</p>
         </div>
       )}
     </div>
+    </ScrollMotion>
   );
 };
 

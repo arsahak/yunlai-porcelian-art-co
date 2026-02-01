@@ -4,7 +4,7 @@ import Button from '@/components/shared/Button';
 import { useLocale, type Locale } from '@/lib/i18n';
 import translations from '@/messages/translations';
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
-import { ChevronDown, Globe, Menu, X } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -76,9 +76,6 @@ const Navbar = () => {
                   `}
                 >
                   {link.name}
-                  {link.hasDropdown && (
-                    <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                  )}
                 </Link>
                 {/* Simple Horizontal Underline Hover Effect */}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />

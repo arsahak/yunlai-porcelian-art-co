@@ -27,6 +27,7 @@
     "subscribeTitle": "Subscribe to Our Newsletter",
     "subscribePlaceholder": "youremail123@gmail.com",
     "subscribeBtn": "SUBSCRIBE",
+    "sending": "Sending...",
     "description": "Outdoor fiberglass planters crafted at Aurora Pots are designed to embody timeless quality. Made from premium-grade fiberglass, each planter is built to endure the elements...",
     "learnMore": "Learn More",
     "support": "Support",
@@ -102,6 +103,182 @@
       "large": "Large Plants & Trees",
       "hanging": "Hanging Plants",
       "tabletop": "Tabletop & Desk"
+    }
+  },
+  "ContactForm": {
+    "title": "Get in touch with us.",
+    "subtitle": "We're here to assist you.",
+    "company": "Your company",
+    "companyPlaceholder": "",
+    "name": "Your Name",
+    "namePlaceholder": "",
+    "country": "Your Country",
+    "countryPlaceholder": "",
+    "email": "Your Email",
+    "emailPlaceholder": "",
+    "phone": "Your Phone Number",
+    "phonePlaceholder": "",
+    "message": "Message",
+    "messagePlaceholder": "",
+    "sending": "Sending...",
+    "sendButton": "Send Message",
+    "success": "Message sent successfully! We will get back to you soon.",
+    "error": "Failed to send message. Please try again later.",
+    "infoTitle": "Contact Info",
+    "infoSubtitle": "We are always happy to assist you",
+    "infoCardTitle": "Contact Info",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone number",
+    "socialLabel": "Social",
+    "addressCardTitle": "Address",
+    "addressLabel": "Address",
+    "addressValue": "8/42 Dinh Bo Linh, Ward 14, Binh Thanh District, Ho Chi Minh city.",
+    "workingTimeLabel": "Working time",
+    "workingTimeValue": "From Monday to Friday. 9AM to 6PM"
+  },
+  "AboutUs": {
+    "Welcome": {
+      "titlePart1": "Welcome To",
+      "titlePart2": "Yunlai",
+      "titlePart3": "Porcelain Art Co. Ltd.",
+      "p1": "Yunlai Porcelain Art Co. Ltd. is a professional porcelain and planter manufacturer with over 15 years of experience in producing and exporting high-quality ceramic planters to global markets.",
+      "p2": "From our beginnings as a traditional handcrafted porcelain workshop, we have steadily evolved to meet the refined demands of international customers, officially expanding into export operations in 2007.",
+      "p3": "Today, Yunlai operates three modern production facilities with a monthly capacity of up to 60 export containers. We proudly maintain long-term partnerships with clients across North America, Europe, Australia, and the Middle East, including markets such as the United States, Germany, Spain, Australia, and Qatar. Our continued growth is driven by a deep respect for craftsmanship, consistent quality control, and a commitment to building meaningful, long-lasting global relationships."
+    },
+    "Meeting": {
+      "titlePrefix": "Meeting with",
+      "titleHighlight": "customers"
+    },
+    "Services": {
+      "titlePrefix": "Our",
+      "titleHighlight": "Services",
+      "items": {
+        "sampling": {
+          "title": "Pre-Production Sampling",
+          "desc": "Our sampling service allows clients to refine every detail before production begins—from shape and proportion to texture and finish. Each prototype is crafted with precision by our skilled artisans and technical team, ensuring the final design perfectly matches your vision in both quality and aesthetics."
+        },
+        "customization": {
+          "title": "Private Label & Brand Customization",
+          "desc": "Our custom logo service allows clients to personalize their products with printed or engraved logos, branded stickers, hang tags, or metal labels—all tailored to your specifications. Whether you want subtle branding for a minimalist collection or bold marks for retail presentation, our team ensures precise application and consistent quality across every piece."
+        }
+      },
+      "learnMore": "Learn More"
+    },
+    "ProudNumbers": {
+      "titlePrefix": "Our Proud Numbers &",
+      "titleHighlight": "Markets",
+      "stats": {
+        "experience": "Years of Experience",
+        "factories": "Factories",
+        "retention": "Customer Retention Rate",
+        "projects": "Worldwide Successful Projects"
+      }
+    }
+  },
+  "AIRevolution": {
+    "title": "AI Revolution Click to Ignite.",
+    "desc": "Experience the future of porcelain craftsmanship with our AI-enhanced design capabilities.",
+    "contactBtn": "Contact Us",
+    "learnMoreBtn": "Learn More"
+  },
+  "Blog": {
+    "Grid": {
+      "title": "Catalog Stories &",
+      "subtitle": "Product Insights",
+      "sort": {
+        "newest": "Newest First",
+        "oldest": "Oldest First",
+        "nameAsc": "Name A-Z",
+        "nameDesc": "Name Z-A"
+      },
+      "noPosts": "No blog posts found",
+      "readMore": "Read more" 
+    },
+    "Details": {
+      "backToBlog": "Back to Blog",
+      "notFound": "Blog Post Not Found",
+      "notFoundDesc": "The article you are looking for does not exist or has been removed.",
+      "readTime": "5 min read",
+      "by": "By",
+      "latestStories": "Latest Stories",
+      "noRecent": "No recent posts available.",
+      "viewAll": "View All Posts"
+    }
+  },
+  "Catalog": {
+    "Bar": {
+      "features": {
+        "global": "Global Delivery",
+        "design": "Design & Prototyping",
+        "quality": "Premium Quality",
+        "packaging": "Complete Packaging"
+      }
+    },
+    "Form": {
+      "success": {
+        "title": "Thank You!",
+        "message": "We've received your request. Our team will send the selected catalogs to your email shortly.",
+        "button": "Send another request"
+      },
+      "error": "Failed to send request. Please try again later.",
+      "header": {
+        "main": "Get in touch to explore our catalog. We're happy",
+        "sub": "to",
+        "subItalic": "help you find the right products."
+      },
+      "fields": {
+        "company": "Your Company *",
+        "name": "Your Name *",
+        "country": "Your Country *",
+        "email": "Your Email *",
+        "phone": "Your Phone Number",
+        "isCustomer": "Already an Pots customer?",
+        "whichCatalogs": "Which catalogs you want to receive?",
+        "submit": "Send Message",
+        "sending": "Sending..."
+      },
+      "options": {
+        "yes": "Yes",
+        "no": "No",
+        "outdoor": "Outdoor Pottery",
+        "indoor": "Indoor Pottery & Terracotta",
+        "fiberglass": "Fiberglass & Fiberstone",
+        "fibercement": "Fibercement",
+        "metal": "Metal",
+        "wicker": "Wicker"
+      }
+    }
+  },
+  "Product": {
+    "Grid": {
+      "title": "All",
+      "subtitle": "Products",
+      "sort": {
+        "newest": "Newest First",
+        "nameAsc": "Name A-Z",
+        "priceAsc": "Price Low to High",
+        "priceDesc": "Price High to Low"
+      },
+      "noProducts": "No products found",
+      "outOfStock": "OUT OF STOCK"
+    },
+    "Details": {
+      "notFound": "Product Not Found",
+      "notFoundDesc": "The product you're looking for doesn't exist.",
+      "browseAll": "Browse All Products",
+      "save": "Save",
+      "sku": "SKU:",
+      "category": "Category:",
+      "inStock": "in stock",
+      "lowStock": "(Low Stock)",
+      "outOfStock": "Out of stock",
+      "color": "Color:",
+      "size": "Size:",
+      "priceVaries": "* Price varies by size",
+      "contactUs": "Contact Us",
+      "relatedTitle": "Related",
+      "relatedSubtitle": "Products",
+      "off": "OFF"
     }
   }
 }

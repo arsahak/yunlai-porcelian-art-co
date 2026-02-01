@@ -2,13 +2,53 @@
 
 import { useLocale } from '@/lib/i18n';
 import translations from '@/messages/translations';
+import emailjs from '@emailjs/browser';
 import { Facebook, Instagram, Mail, Twitter, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const Footer = () => {
   const { locale } = useLocale();
   const t = translations[locale].Footer;
+  
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setLoading(true);
+    setStatus(null);
+
+    const templateParams = {
+        company: 'Newsletter Subscriber',
+        from_name: 'Subscriber', 
+        country: '',
+        from_email: email,
+        phone: '',
+        message: 'Newsletter Subscription Request',
+        date: new Date().toLocaleString(),
+    };
+
+    try {
+      await emailjs.send(
+        'service_xh718mb',
+        'template_s8cavho',
+        templateParams,
+        'JSTIICpi4oohGdpyw'
+      );
+      setStatus({ type: 'success', message: 'Subscribed successfully!' });
+      setEmail('');
+    } catch (error) {
+       console.error('FAILED...', error);
+       setStatus({ type: 'error', message: 'Failed to subscribe. Please try again.' });
+    } finally {
+        setLoading(false);
+    }
+  };
 
   return (
     <footer className="w-full bg-[#f8f9fa] pt-16 pb-8">
@@ -21,21 +61,33 @@ const Footer = () => {
              <h2 className="text-3xl md:text-4xl font-serif font-bold text-white leading-tight">
                {t.subscribeTitle}
              </h2>
+             {status && (
+               <p className={`mt-2 text-sm font-medium ${status.type === 'success' ? 'text-green-200' : 'text-red-200'}`}>
+                 {status.message}
+               </p>
+             )}
            </div>
 
-           <div className="w-full max-w-lg bg-white p-2 rounded-2xl md:rounded-full flex flex-col md:flex-row items-center shadow-lg gap-2 md:gap-0">
+           <form onSubmit={handleSubscribe} className="w-full max-w-lg bg-white p-2 rounded-2xl md:rounded-full flex flex-col md:flex-row items-center shadow-lg gap-2 md:gap-0">
              <div className="flex-1 flex items-center w-full px-4 md:pl-6 h-12 md:h-auto">
                 <Mail className="w-5 h-5 text-gray-400 mr-3 shrink-0" />
                 <input 
                   type="email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder={t.subscribePlaceholder}
                   className="flex-1 bg-transparent border-none outline-none text-gray-700 placeholder-gray-400 h-full py-2 min-w-0"
+                  required
                 />
              </div>
-             <button className="w-full md:w-auto bg-primary hover:bg-green-700 text-white font-bold text-sm px-8 py-3 rounded-xl md:rounded-full transition-colors uppercase tracking-wider shrink-0 shadow-md md:shadow-none">
-               {t.subscribeBtn}
+             <button 
+               type="submit"
+               disabled={loading}
+               className="w-full md:w-auto bg-primary hover:bg-green-700 text-white font-bold text-sm px-8 py-3 rounded-xl md:rounded-full transition-colors uppercase tracking-wider shrink-0 shadow-md md:shadow-none disabled:opacity-70 disabled:cursor-not-allowed"
+             >
+               {loading ? t.sending : t.subscribeBtn}
              </button>
-           </div>
+           </form>
         </div>
 
         {/* Main Footer Content */}

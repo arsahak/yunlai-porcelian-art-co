@@ -1,12 +1,18 @@
 "use client";
 
 import { Blog, getBlogs } from '@/app/actions/blog';
+import ScrollMotion from '@/components/motion/ScrollMotion';
+import { useLocale } from '@/lib/i18n';
+import Translations from '@/messages/translations';
 import { Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const BlogGrid = () => {
+  const { locale } = useLocale();
+  const t = Translations[locale].Blog.Grid;
+
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -72,7 +78,7 @@ const BlogGrid = () => {
   const formatDate = (dateString?: string) => {
     if (!dateString) return 'No date';
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
+    return date.toLocaleDateString(locale === 'cn' ? 'zh-CN' : 'en-US', {
       month: 'short',
       day: '2-digit',
       year: 'numeric'
@@ -116,11 +122,12 @@ const BlogGrid = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <ScrollMotion animation="fade-up">
+    <div className="container mx-auto px-8 py-20">
       {/* Header & Sort */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-4">
         <h2 className="text-3xl md:text-4xl font-title">
-          Catalog Stories & <span className="text-primary">Product Insights</span>
+          {t.title} <span className="text-primary">{t.subtitle}</span>
         </h2>
         
         <div className="relative">
@@ -134,10 +141,10 @@ const BlogGrid = () => {
               backgroundRepeat: 'no-repeat'
             }}
           >
-            <option value="date-newest">Newest First</option>
-            <option value="date-oldest">Oldest First</option>
-            <option value="title-asc">Name A-Z</option>
-            <option value="title-desc">Name Z-A</option>
+            <option value="date-newest">{t.sort.newest}</option>
+            <option value="date-oldest">{t.sort.oldest}</option>
+            <option value="title-asc">{t.sort.nameAsc}</option>
+            <option value="title-desc">{t.sort.nameDesc}</option>
           </select>
         </div>
       </div>
@@ -272,10 +279,11 @@ const BlogGrid = () => {
         </>
       ) : (
         <div className="text-center py-16">
-          <p className="text-gray-500 text-lg">No blog posts found</p>
+          <p className="text-gray-500 text-lg">{t.noPosts}</p>
         </div>
       )}
     </div>
+    </ScrollMotion>
   );
 };
 

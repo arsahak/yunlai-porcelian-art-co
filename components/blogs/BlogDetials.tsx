@@ -1,6 +1,8 @@
 "use client";
 
 import { Blog, getBlog, getRecentBlogs } from '@/app/actions/blog';
+import { useLocale } from '@/lib/i18n';
+import Translations from '@/messages/translations';
 import { Calendar, ChevronRight, Clock } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,6 +13,9 @@ interface BlogDetailsProps {
 }
 
 const BlogDetails = ({ slug }: BlogDetailsProps) => {
+  const { locale } = useLocale();
+  const t = Translations[locale].Blog.Details;
+
   const [blog, setBlog] = useState<Blog | null>(null);
   const [recentBlogs, setRecentBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
@@ -46,7 +51,7 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
   const formatDate = (dateString?: string) => {
     if (!dateString) return 'No date';
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
+    return date.toLocaleDateString(locale === 'cn' ? 'zh-CN' : 'en-US', {
       month: 'long',
       day: 'numeric',
       year: 'numeric'
@@ -91,20 +96,20 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
   if (!blog) {
     return (
       <div className="container mx-auto px-4 py-20 text-center">
-        <h2 className="text-3xl font-title text-gray-900 mb-4">Blog Post Not Found</h2>
-        <p className="text-gray-500 mb-8">The article you are looking for does not exist or has been removed.</p>
+        <h2 className="text-3xl font-title text-gray-900 mb-4">{t.notFound}</h2>
+        <p className="text-gray-500 mb-8">{t.notFoundDesc}</p>
         <Link 
           href="/blog" 
           className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-colors"
         >
-          Back to Blog
+          {t.backToBlog}
         </Link>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-8 md:py-20">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         {/* Main Content - Left Side */}
@@ -148,13 +153,13 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
                   <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">
                     {blog.author.charAt(0)}
                   </div>
-                  <span>By {blog.author}</span>
+                  <span>{t.by} {blog.author}</span>
                 </div>
               )}
               {/* Estimated Read Time (Mock) */}
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-primary" />
-                <span>5 min read</span>
+                <span>{t.readTime}</span>
               </div>
             </div>
 
@@ -191,7 +196,7 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
             {/* Latest Posts Widget */}
             <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100">
               <h3 className="text-2xl font-title text-gray-900 mb-6 flex items-center gap-3">
-                 Latest Stories
+                 {t.latestStories}
                  <span className="w-12 h-1 bg-primary rounded-full block"></span>
               </h3>
               
@@ -225,13 +230,13 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
                     </Link>
                   ))
                 ) : (
-                   <p className="text-gray-500 text-sm">No recent posts available.</p>
+                   <p className="text-gray-500 text-sm">{t.noRecent}</p>
                 )}
               </div>
               
                <div className="mt-8 pt-6 border-t border-gray-200">
                 <Link href="/blog" className="flex items-center justify-between text-gray-900 font-medium group hover:text-primary transition-colors">
-                  View All Posts
+                  {t.viewAll}
                   <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
