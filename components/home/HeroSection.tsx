@@ -117,13 +117,13 @@ const HeroSection = () => {
                              className="flex flex-wrap gap-4 pt-8"
                            >
                             <Button 
-                              href="/contact" 
+                              href="/contact-us" 
                               className="!px-8 !py-3 shadow-lg hover:shadow-xl bg-primary hover:bg-primary/90"
                             >
                               {t.Common.contactUs}
                             </Button>
                             <Button 
-                              href="/about" 
+                              href="/about-us" 
                               className="!px-8 !py-3 border-2 border-primary text-primary hover:bg-primary/5 shadow-none hover:shadow-sm !bg-transparent"
                               textColor="text-primary"
                             >

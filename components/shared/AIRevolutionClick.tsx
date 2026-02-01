@@ -30,7 +30,7 @@ const AIRevolutionClick = () => {
           </Link>
           
           <Link 
-            href="/about" 
+            href="/about-us" 
             className="px-8 py-3 rounded-full bg-white border border-[#28883D] text-[#28883D] font-medium hover:bg-[#28883D] hover:text-white transition-all duration-300 min-w-[140px]"
           >
             {t.learnMoreBtn}

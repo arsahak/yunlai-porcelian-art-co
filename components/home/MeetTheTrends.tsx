@@ -47,7 +47,7 @@ const MeetTheTrends = () => {
               {t.desc}
             </p>
 
-            <Button href="/about" className="!mt-8 !px-10 shadow-lg bg-primary hover:bg-primary/90">
+            <Button href="/about-us" className="!mt-8 !px-10 shadow-lg bg-primary hover:bg-primary/90">
               {t.button}
             </Button>
           </div>
