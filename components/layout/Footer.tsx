@@ -3,7 +3,7 @@
 import { useLocale } from '@/lib/i18n';
 import translations from '@/messages/translations';
 import emailjs from '@emailjs/browser';
-import { Facebook, Instagram, Mail, Twitter, Youtube } from 'lucide-react';
+import { Facebook, Instagram, Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -143,7 +143,7 @@ const Footer = () => {
             <h3 className="font-serif font-bold text-lg text-secondary mb-6">{t.contact}</h3>
             <div className="space-y-4 text-sm text-gray-500 flex flex-col items-center min-[480px]:items-start">
                <div>
-                  <p className="font-medium text-gray-900 mb-1">{t.hotelRes}:</p>
+                  <p className="font-medium text-gray-900 mb-1">Mobile:</p>
                   <p>+86 151 9021 8529</p>
                </div>
                {/* <div>
@@ -161,11 +161,8 @@ const Footer = () => {
           </p>
           
           <div className="flex items-center space-x-6">
-            {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
-              <a key={i} href="#" className="text-secondary hover:text-primary transition-colors">
-                <Icon className="w-5 h-5" />
-              </a>
-            ))}
+            <Link target='_blank' href="https://www.facebook.com/haozeceramicsfactory" className="hover:text-primary transition-colors"><Facebook size={20} /></Link>
+                         <Link target='_blank' href="https://www.instagram.com/artyunlai/" className="hover:text-primary transition-colors"><Instagram size={20} /></Link>
           </div>
         </div>
       </div>
