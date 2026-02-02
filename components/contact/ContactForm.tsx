@@ -5,6 +5,7 @@ import Translations from '@/messages/translations';
 import emailjs from '@emailjs/browser';
 import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useState } from 'react';
 import ScrollMotion from '../motion/ScrollMotion';
 
@@ -227,21 +228,21 @@ const ContactForm = () => {
                    <div className="space-y-4 flex-grow">
                       <div>
                          <p className="text-gray-500 text-xs uppercase mb-1">{t.emailLabel}</p>
-                         <p className="font-medium text-gray-900">exampla@info.com</p>
+                         <p className="font-medium text-gray-900">kitty@haozepottery.com</p>
                       </div>
                       <div>
                          <p className="text-gray-500 text-xs uppercase mb-1">{t.phoneLabel}</p>
-                         <p className="font-medium text-gray-900">(+84) 975 947 573</p>
+                         <p className="font-medium text-gray-900">+86 151 9021 8529</p>
                       </div>
                    </div>
 
                    <div className="mt-8">
                       <p className="text-gray-500 text-xs uppercase mb-3">{t.socialLabel}</p>
                       <div className="flex items-center gap-4 text-gray-900">
-                         <a href="#" className="hover:text-primary transition-colors"><Facebook size={20} /></a>
-                         <a href="#" className="hover:text-primary transition-colors"><Instagram size={20} /></a>
-                         <a href="#" className="hover:text-primary transition-colors"><Twitter size={20} /></a>
-                         <a href="#" className="hover:text-primary transition-colors"><Youtube size={20} /></a>
+                         <Link target='_blank' href="https://www.facebook.com/haozeceramicsfactory" className="hover:text-primary transition-colors"><Facebook size={20} /></Link>
+                         <Link target='_blank' href="https://www.instagram.com/artyunlai/" className="hover:text-primary transition-colors"><Instagram size={20} /></Link>
+                         {/* <Link target='_blank' href="#" className="hover:text-primary transition-colors"><Twitter size={20} /></Link>
+                         <Link target='_blank' href="#" className="hover:text-primary transition-colors"><Youtube size={20} /></Link> */}
                       </div>
                    </div>
                 </div>

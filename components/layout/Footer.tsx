@@ -144,12 +144,12 @@ const Footer = () => {
             <div className="space-y-4 text-sm text-gray-500 flex flex-col items-center min-[480px]:items-start">
                <div>
                   <p className="font-medium text-gray-900 mb-1">{t.hotelRes}:</p>
-                  <p>123-456-7890</p>
+                  <p>+86 151 9021 8529</p>
                </div>
-               <div>
+               {/* <div>
                   <p className="font-medium text-gray-900 mb-1">{t.ticketOffice}:</p>
                   <p>123-456-7890</p>
-               </div>
+               </div> */}
             </div>
           </div>
         </div>
