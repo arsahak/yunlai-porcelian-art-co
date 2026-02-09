@@ -103,7 +103,7 @@ const OurWorksAndProcess = () => {
                 <div className="relative w-64 h-48 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center justify-center border border-gray-100">
                   <div className="w-20 h-20 relative mb-2">
                     <Image
-                      src="/assets/site-logo/site-logo.png"
+                      src="/assets/site-logo/site-logonew.png"
                       alt="Logo"
                       fill
                       className="object-contain"
