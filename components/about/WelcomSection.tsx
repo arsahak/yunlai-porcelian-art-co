@@ -78,7 +78,7 @@ const WelcomeSection = () => {
                           {service}
                         </p>
                       </div>
-                    )
+                    ),
                   )}
                 </div>
               </div>
@@ -97,7 +97,7 @@ const WelcomeSection = () => {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/U64bLz4EWRI?si=L0JBnzsuyd4OHA_9&autoplay=1&mute=1"
+              src="/assets/video.mp4"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
