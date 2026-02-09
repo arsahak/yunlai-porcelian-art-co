@@ -143,7 +143,19 @@
       "titlePart3": "Porcelain Art Co. Ltd.",
       "p1": "Yunlai Porcelain Art Co. Ltd. is a professional porcelain and planter manufacturer with over 15 years of experience in producing and exporting high-quality ceramic planters to global markets.",
       "p2": "From our beginnings as a traditional handcrafted porcelain workshop, we have steadily evolved to meet the refined demands of international customers, officially expanding into export operations in 2007.",
-      "p3": "Today, Yunlai operates three modern production facilities with a monthly capacity of up to 60 export containers. We proudly maintain long-term partnerships with clients across North America, Europe, Australia, and the Middle East, including markets such as the United States, Germany, Spain, Australia, and Qatar. Our continued growth is driven by a deep respect for craftsmanship, consistent quality control, and a commitment to building meaningful, long-lasting global relationships."
+      "p3": "Today, Yunlai operates three modern production facilities with a monthly capacity of up to 60 export containers. We proudly maintain long-term partnerships with clients across North America, Europe, Australia, and the Middle East, including markets such as the United States, Germany, Spain, Australia, and Qatar. Our continued growth is driven by a deep respect for craftsmanship, consistent quality control, and a commitment to building meaningful, long-lasting global relationships.",
+      "specialization": {
+        "intro": "We are a Chinese manufacturer specializing in the export of ceramic flower pots, dedicated to integrating the aesthetics of Eastern gardens into global home and gardening life. With a profound heritage of ceramic craftsmanship, we are dedicated to designing, manufacturing and exporting high-quality ceramic flower pots. Our products have been exported to over a dozen countries including the United States, Saudi Arabia, France and India, and have been recognized and trusted by customers from various countries.",
+        "quality": "We insist on independently controlling the entire process from raw material selection, shaping, glazing to high-temperature firing to ensure that each flowerpot is both aesthetically pleasing and durable. As a long-term B2B supplier, we not only offer standard products but also provide flexible customization support and stable supply chain services to our customers, including:",
+        "services": {
+          "customization": "Personalized customization of flower pot shapes, glazes, patterns and packaging",
+          "development": "Specialized product development and procurement based on market demand",
+          "delivery": "Efficient sampling and on-time delivery",
+          "procurement": "One-stop multi-category ceramic procurement support",
+          "logistics": "Professional cross-border logistics and after-sales service"
+        },
+        "philosophy": "We believe that ceramic flowerpots are not only containers for plants, but also media that carry the aesthetics of nature and the emotions of life. We look forward to cooperating with more international partners to enable the warmth and elegance of Chinese ceramics to accompany the green growth around the world."
+      }
     },
     "Meeting": {
       "titlePrefix": "Meeting with",

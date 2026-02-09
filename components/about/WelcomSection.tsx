@@ -51,6 +51,47 @@ const WelcomeSection = () => {
             </div>
           </div>
 
+          {/* Specialization Section */}
+          <div className="mb-12 md:mb-20">
+            <div className="bg-gradient-to-br from-primary/5 via-white to-primary/5 rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm border border-primary/10">
+              {/* Intro Text */}
+              <div className="max-w-4xl mx-auto mb-10">
+                <p className="text-gray-700 leading-relaxed md:text-lg font-light mb-6">
+                  {t.specialization.intro}
+                </p>
+                <p className="text-gray-700 leading-relaxed md:text-lg font-light">
+                  {t.specialization.quality}
+                </p>
+              </div>
+
+              {/* Services Grid */}
+              <div className="max-w-5xl mx-auto mb-10">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                  {Object.values(t.specialization.services).map(
+                    (service, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start gap-3 bg-white/60 backdrop-blur-sm p-5 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-md"
+                      >
+                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2"></div>
+                        <p className="text-gray-700 leading-relaxed font-light">
+                          {service}
+                        </p>
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+
+              {/* Philosophy */}
+              <div className="max-w-4xl mx-auto text-center">
+                <p className="text-gray-800 leading-relaxed md:text-lg font-light italic">
+                  {t.specialization.philosophy}
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Bottom Section: Youtube Video */}
           <div className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl">
             <iframe

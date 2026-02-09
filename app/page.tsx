@@ -10,7 +10,7 @@ import ImageViewSection from '@/components/shared/ImageViewSection';
 
 
 export const metadata = {
-  title: "Yunlai Porcelain Art Co.",
+  title: "Yixing Yunlai Zisha Art and Culture Co., Ltd.",
   description: "Beautiful collection of Yunlai porcelain art",
   alternates: {
     canonical: "/",
