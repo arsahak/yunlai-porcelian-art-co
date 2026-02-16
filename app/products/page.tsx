@@ -16,11 +16,9 @@ const ProductsPage = () => {
         ]}
       />
       
-      <div className="container mx-auto px-4 py-8">
-        <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center">Loading...</div>}>
-          <ProductGrid />
-        </Suspense>
-      </div>
+      <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center">Loading...</div>}>
+        <ProductGrid />
+      </Suspense>
       <AIRevolutionClick/>
       <ImageViewSection/>
     </main>

@@ -85,9 +85,9 @@ const HeroSection = () => {
 
             {/* Content Container */}
             <div className="container mx-auto h-full px-4 relative z-20 flex items-center pt-16 md:pt-20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+              <div className="w-full">
                 {/* Left Content */}
-                <div className="space-y-6 max-w-2xl">
+                <div className="space-y-6 max-w-7xl">
                   <AnimatePresence mode="wait">
                     {activeIndex === index && (
                       <>
