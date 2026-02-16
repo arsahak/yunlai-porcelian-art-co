@@ -81,11 +81,11 @@ const FindTheRightPot = () => {
                       </div>
                     )}
                     {/* Product Count Badge */}
-                    {cat.productCount !== undefined && cat.productCount > 0 && (
+                    {/* {cat.productCount !== undefined && cat.productCount > 0 && (
                       <div className="absolute top-2 right-2 bg-primary text-white px-2 py-1 rounded-full text-xs font-bold">
                         {cat.productCount}
                       </div>
-                    )}
+                    )} */}
                   </div>
                   <h3 className="font-bold text-gray-800 group-hover:text-primary transition-colors">
                     {cat.title}
