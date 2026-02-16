@@ -86,7 +86,7 @@ const NewToYou = () => {
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-center mb-12 gap-6">
           <h2 className="text-4xl font-serif font-bold text-primary">
-            <span className="text-secondary">{t.titlePrefix}</span> {t.titleSuffix}
+            <span className="text-secondary">{'Hot'}</span> {' Wholesale Products'}
           </h2>
 
           {/* Badge Tabs - Functional Filters */}

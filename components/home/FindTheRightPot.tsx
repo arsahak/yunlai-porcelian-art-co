@@ -39,7 +39,7 @@ const FindTheRightPot = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-black">
-              {t.titlePrefix} <span className="text-primary">{t.titleHighlight}</span> {t.titleSuffix}
+              {'Shop by '} <span className="text-primary">{'Size & Wholesale Categories'}</span>
             </h2>
           </div>
 

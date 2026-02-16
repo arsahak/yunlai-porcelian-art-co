@@ -38,10 +38,10 @@ const MeetTheTrends = () => {
               </h4>
 
               <h2 className="text-4xl md:text-5xl font-serif font-medium leading-tight text-black">
-                {t.titlePart1}{" "}
-                <span className="text-primary font-bold">{t.titlePart2}</span>{" "}
+                {'Real Ceramic Flower Pot Factory in'}{" "}
+                <span className="text-primary font-bold">{'Yixing, China'}</span>{" "}
                 <br />
-                <span className="text-primary font-bold">{t.titlePart3}</span>
+                {/* <span className="text-primary font-bold">{t.titlePart3}</span> */}
               </h2>
 
               <p className="text-gray-500 leading-relaxed max-w-md">{t.desc}</p>
@@ -50,7 +50,7 @@ const MeetTheTrends = () => {
                 href="/about-us"
                 className="!mt-8 !px-10 shadow-lg bg-primary hover:bg-primary/90"
               >
-                {t.button}
+                {'View Our Factory'}
               </Button>
             </div>
           </div>

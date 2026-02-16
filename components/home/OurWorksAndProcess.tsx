@@ -28,8 +28,8 @@ const OurWorksAndProcess = () => {
             <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 mb-12">
               <div className="max-w-2xl md:text-left text-center">
                 <h2 className="text-4xl md:text-5xl font-serif font-bold text-black mb-3">
-                  {t.titlePrefix}{" "}
-                  <span className="text-primary">{t.titleSuffix}</span>
+                  {/* {'Production & Packing Process'}{" "} */}
+                  <span className="text-primary">Production & Packing Process</span>
                 </h2>
                 <p className="text-gray-500 text-lg">
                   {translations[locale].Insights.subtitle}

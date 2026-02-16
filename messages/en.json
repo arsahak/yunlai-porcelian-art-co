@@ -4,9 +4,9 @@
     "description": "Discover our beautiful collection of Yunlai porcelain art"
   },
   "Hero": {
-    "titlePrefix": "Ceramic Flower",
-    "titleSuffix": "Pot Manufacturer & Exporter",
-    "subtitle": "Elevating indoor and outdoor spaces with elegant, durable planters. Designed for sustainable living and trusted by global buyers."
+    "titlePrefix": "Ceramic Flowerpot Manufacturer & Exporter",
+    "titleSuffix": "Yixing China Factory | OEM & Bulk Wholesale Supply",
+    "subtitle": "We are a ceramic flowerpot manufacturer in Yixing, China with 300+ workers. We produce durable small, medium, and large garden pots for wholesale buyers, importers, and landscaping projects worldwide."
   },
   "Navigation": {
     "home": "Home",
@@ -62,12 +62,14 @@
   },
   "Services": {
     "titlePrefix": "Our",
-    "titleSuffix": "Services",
+    "titleSuffix": "Wholesale Services",
     "subtitle": "Your full service partner for interior & exterior landscapes",
     "items": {
       "sampling": { "title": "Pre-Production Sampling", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." },
-      "landscaping": { "title": "Interior & Exterior Landscaping", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." },
-      "greenWall": { "title": "Green Wall", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." }
+      "landscaping": { "title": "OEM Customization", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." },
+      "greenWall": { "title": "Bulk Packaging (Pallet / Wooden Crate)", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." },
+
+      "newone": { "title": "Export & Container Loading Support", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." }
     }
   },
   "NewToYou": {
@@ -87,7 +89,7 @@
     "titlePart1": "Meet the",
     "titlePart2": "trends of",
     "titlePart3": "the season.",
-    "desc": "Apparently we had reached a great height in the atmosphere, for the sky was a dead black and there a stars.",
+    "desc": "Yixing Yunlai Zisha Art and Culture Co., Ltd. is a ceramic flower pot manufacturer located in Yixing, Jiangsu, China. We have 300+ workers and 4 years of production experience in ceramic pots.We specialize in small, medium, and large ceramic flower pots made from Yixing purple clay, suitable for outdoor gardens, landscaping projects, and bulk wholesale orders.",
     "button": "More About Us"
   },
   "FindPot": {

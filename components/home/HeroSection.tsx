@@ -91,7 +91,7 @@ const HeroSection = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                            className="text-5xl md:text-6xl lg:text-7xl font-title leading-tight text-secondary"
+                            className="text-2xl md:text-2xl lg:text-2xl font-title leading-tight text-secondary"
                           >
                             {slide.titlePrefix} <br />
                             <span className="text-primary italic">
@@ -120,14 +120,14 @@ const HeroSection = () => {
                               href="/contact-us" 
                               className="!px-8 !py-3 shadow-lg hover:shadow-xl bg-primary hover:bg-primary/90"
                             >
-                              {t.Common.contactUs}
+                              Get Wholesale Quote
                             </Button>
                             <Button 
-                              href="/about-us" 
+                              href="/products" 
                               className="!px-8 !py-3 border-2 border-primary text-primary hover:bg-primary/5 shadow-none hover:shadow-sm !bg-transparent"
                               textColor="text-primary"
                             >
-                              {t.Common.learnMore}
+                             View Catalog
                             </Button>
                           </motion.div>
                          </>

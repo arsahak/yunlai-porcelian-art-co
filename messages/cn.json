@@ -67,7 +67,8 @@
     "items": {
       "sampling": { "title": "生产前打样", "desc": "我们的打样服务允许客户在生产开始前完善每一个细节——从形状和比例到纹理和表面处理。" },
       "landscaping": { "title": "室内外景观", "desc": "我们的打样服务允许客户在生产开始前完善每一个细节——从形状和比例到纹理和表面处理。" },
-      "greenWall": { "title": "绿墙", "desc": "我们的打样服务允许客户在生产开始前完善每一个细节——从形状和比例到纹理和表面处理。" }
+      "greenWall": { "title": "绿墙", "desc": "我们的打样服务允许客户在生产开始前完善每一个细节——从形状和比例到纹理和表面处理。" },
+      "newone": { "title": "Export & Container Loading Support", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." }
     }
   },
   "NewToYou": {

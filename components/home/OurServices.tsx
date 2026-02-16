@@ -39,27 +39,10 @@ const OurServices = () => {
     {
       id: 5,
       image: "/assets/home/1.jpg",
-      title: t.items.landscaping.title,
-      desc: t.items.landscaping.desc,
+      title: t.items.newone.title,
+      desc: t.items.newone.desc,
     },
-    {
-      id: 6,
-      image: "/assets/home/8.jpg",
-      title: t.items.greenWall.title,
-      desc: t.items.greenWall.desc,
-    },
-    {
-      id: 7,
-      image: "/assets/home/3.jpeg",
-      title: t.items.landscaping.title,
-      desc: t.items.landscaping.desc,
-    },
-    {
-      id: 8,
-      image: "/assets/home/Rectangle 1033.png",
-      title: t.items.greenWall.title,
-      desc: t.items.greenWall.desc,
-    },
+    
   ];
 
   return (
