@@ -18,9 +18,8 @@ const kefirMedium = localFont({
   display: "swap",
 });
 
-
 export const metadata = {
-  metadataBase: new URL("https://yunlai-porcelian-art-co.vercel.app"),
+  metadataBase: new URL("https://www.yixingyunlai.com"),
 };
 
 export default function RootLayout({
@@ -30,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${kefirMedium.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${kefirMedium.variable} antialiased`}>
         <LocaleProvider>
           <Topbar />
           <Navbar />
