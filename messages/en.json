@@ -76,10 +76,10 @@
     "titlePrefix": "New",
     "titleSuffix": "To You",
     "tabs": {
-      "bestSeller": "Best Seller",
-      "newArrival": "New Arrival",
-      "offer": "Offer",
-      "trending": "Trending",
+      "bestSeller": "Popular Wholesale Items",
+      "newArrival": "New Designs",
+      "offer": "Bulk Order Deals",
+      "trending": "Project Best Sellers",
       "all": "All Products"
     },
     "productName": "Plonta Bloom"
