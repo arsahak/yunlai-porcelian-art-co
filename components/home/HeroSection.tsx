@@ -54,7 +54,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative w-full h-[85vh] min-h-[600px] bg-[#F8F9FA] overflow-hidden">
+    <section className="relative w-full h-[100dvh] md:h-[85vh] min-h-[500px] md:min-h-[600px] bg-[#F8F9FA] overflow-hidden">
       <Swiper
         modules={[Navigation, Autoplay, EffectFade]}
         effect="fade"
@@ -84,7 +84,7 @@ const HeroSection = () => {
             </div>
 
             {/* Content Container */}
-            <div className="container mx-auto h-full px-4 relative z-20 flex items-center pt-20">
+            <div className="container mx-auto h-full px-4 relative z-20 flex items-center pt-16 md:pt-20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
                 {/* Left Content */}
                 <div className="space-y-6 max-w-2xl">
@@ -100,7 +100,7 @@ const HeroSection = () => {
                             ease: "easeOut",
                             delay: 0.2,
                           }}
-                          className="text-5xl md:text-6xl lg:text-7xl font-title leading-tight text-secondary"
+                          className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-title leading-tight text-secondary"
                         >
                           {slide.titlePrefix} <br />
                           <span className="text-primary italic">
@@ -117,7 +117,7 @@ const HeroSection = () => {
                             ease: "easeOut",
                             delay: 0.4,
                           }}
-                          className="text-gray-800 text-lg md:text-xl font-sans leading-relaxed max-w-lg mt-6 font-medium"
+                          className="text-gray-800 text-base sm:text-lg md:text-xl font-sans leading-relaxed max-w-lg mt-6 font-medium"
                         >
                           {slide.subtitle}
                         </motion.p>
@@ -131,7 +131,7 @@ const HeroSection = () => {
                             ease: "easeOut",
                             delay: 0.6,
                           }}
-                          className="flex flex-wrap gap-4 pt-8"
+                          className="flex flex-wrap gap-4 pt-6 md:pt-8"
                         >
                           <Button
                             href="/contact-us"

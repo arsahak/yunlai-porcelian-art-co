@@ -54,7 +54,7 @@ const InsighedSection = () => {
 
   return (
     <ScrollMotion animation="fade-up">
-      <section className="w-full bg-gray-50/50 py-8 md:py-20">
+      <section className="w-full bg-gray-50 py-8 md:py-20">
         <div className="container mx-auto px-4">
           {/* Header Section */}
           <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 mb-12">
