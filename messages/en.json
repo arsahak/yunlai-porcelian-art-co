@@ -28,18 +28,18 @@
     "subscribePlaceholder": "youremail123@gmail.com",
     "subscribeBtn": "SUBSCRIBE",
     "sending": "Sending...",
-    "description": "Outdoor fiberglass planters crafted at Aurora Pots are designed to embody timeless quality. Made from premium-grade fiberglass, each planter is built to endure the elements...",
+    "description": "Yixing Yunlai Zisha Art and Culture Co., Ltd. is a ceramic flower pot manufacturer based in Yixing, China. We specialize in Yixing purple clay pots, OEM customization, and bulk wholesale supply for global importers, distributors, and landscaping projects.",
     "learnMore": "Learn More",
     "support": "Support",
     "contact": "Contact Us",
     "hotelRes": "Hotel Reservation",
     "ticketOffice": "Ticket Office",
-    "rights": "© 2026 Yunlai Porcelain Art Co. Ltd. | All Rights Reserved"
+    "rights": "© 2026 Yixing Yunlai Zisha Art and Culture Co. Ltd. | All Rights Reserved"
   },
   "Insights": {
-    "titlePrefix": "Catalog Stories &",
-    "titleSuffix": "Product Insights",
-    "subtitle": "Your full service partner for interior & exterior landscapes",
+    "titlePrefix": "Ceramic Pot Insights &",
+    "titleSuffix": "Factory Stories",
+    "subtitle": "Professional OEM, bulk production, and export support for global wholesale buyers",
     "explore": "Explore More",
     "articleTitle": "What Makes Aurora Pots' Outdoor Fiberglass Planters Truly Stand Out?",
     "articleDesc": "Outdoor fiberglass planters crafted at Aurora Pots are designed to embody timeless quality. Made from premium-grade fiberglass, each planter is built to endure the elements...",
@@ -51,25 +51,25 @@
     "projectTitle": "One&Only Za'abeel, Rooted in Luxury",
     "location": "Dubai",
     "date": "12 January, 2025",
-    "processTitlePrefix": "Our",
-    "processTitleSuffix": "Work Process",
+    "processTitlePrefix": "From ",
+    "processTitleSuffix": "Order to Delivery Process",
     "steps": {
-      "step1": { "title": "Design Meeting", "desc": "In our initial meeting, we discuss your requirements in detail and develop a customised landscaping solution." },
-      "step2": { "title": "Project Specifications", "desc": "Matching your requirements, we provide you with specifications of all the products you have opted for." },
-      "step3": { "title": "Client Approval", "desc": "If there are no revisions, we proceed to receiving an official approval from you." },
-      "step4": { "title": "Installation & Maintenance", "desc": "Once approved, we move forward with creating your ideal space and maintaining it effectively." }
+      "step1": { "title": "Inquiry & Requirement Confirmation", "desc": "We discuss your required pot size, quantity, glaze finish, and customization details for bulk wholesale orders." },
+      "step2": { "title": "Sample Production & Approval", "desc": "We produce samples based on your specifications to confirm quality, color, and design before mass production" },
+      "step3": { "title": "Mass Production & Quality Control", "desc": "After approval, we begin bulk production using Yixing purple clay and high-temperature kiln firing (1000–1200°C)" },
+      "step4": { "title": "Packaging & Global Export Delivery", "desc": "Finished pots are securely packed with pallet or wooden crate and shipped worldwide via 20GP or 40HQ containers" }
     }
   },
   "Services": {
     "titlePrefix": "Our",
-    "titleSuffix": "Wholesale Services",
-    "subtitle": "Your full service partner for interior & exterior landscapes",
+    "titleSuffix": "Wholesale Services & OEM Support",
+    "subtitle": "Professional OEM, bulk production, and export support for global wholesale buyers",
     "items": {
-      "sampling": { "title": "Pre-Production Sampling", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." },
-      "landscaping": { "title": "OEM Customization", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." },
-      "greenWall": { "title": "Bulk Packaging (Pallet / Wooden Crate)", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." },
+      "sampling": { "title": "Pre-Production Sampling", "desc": "We provide sample production before mass manufacturing to confirm size, glaze, and quality based on your requirements." },
+      "landscaping": { "title": "OEM Customization", "desc": "We support custom sizes, colors, glaze finishes, and logo printing for bulk wholesale and private label buyers." },
+      "greenWall": { "title": "Bulk Packaging (Pallet / Wooden Crate)", "desc": "All ceramic pots are packed securely using pallet or wooden crate packaging to ensure safe international shipping." },
 
-      "newone": { "title": "Export & Container Loading Support", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." }
+      "newone": { "title": "Export & Container Loading Support", "desc": "We assist with container loading (20GP / 40HQ), export documents, and global shipment for wholesale orders." }
     }
   },
   "NewToYou": {
@@ -134,7 +134,7 @@
     "socialLabel": "Social",
     "addressCardTitle": "Address",
     "addressLabel": "Address",
-    "addressValue": "8/42 Dinh Bo Linh, Ward 14, Binh Thanh District, Ho Chi Minh city.",
+    "addressValue": "No-2, Tongli Middle Road, Dingyu Town, Yixing City, Jiangsu, China.",
     "workingTimeLabel": "Working time",
     "workingTimeValue": "From Monday to Friday. 9AM to 6PM"
   },
@@ -169,7 +169,7 @@
       "items": {
         "sampling": {
           "title": "Pre-Production Sampling",
-          "desc": "Our sampling service allows clients to refine every detail before production begins—from shape and proportion to texture and finish. Each prototype is crafted with precision by our skilled artisans and technical team, ensuring the final design perfectly matches your vision in both quality and aesthetics."
+          "desc": "We provide sample production before mass manufacturing to confirm size, glaze, and quality based on your requirements."
         },
         "customization": {
           "title": "Private Label & Brand Customization",

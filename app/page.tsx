@@ -4,6 +4,7 @@ import InsighedSection from "@/components/home/InsighedSection";
 import MeetTheTrends from "@/components/home/MeetTheTrends";
 import NewToYou from "@/components/home/NewToYou";
 import OurServices from "@/components/home/OurServices";
+import OurWorksAndProcess from "@/components/home/OurWorksAndProcess";
 import ImageViewSection from "@/components/shared/ImageViewSection";
 
 export const metadata = {
@@ -29,7 +30,7 @@ export default function Home() {
       <NewToYou />
       <FindTheRightPot />
       <OurServices />
-      {/* <OurWorksAndProcess /> */}
+      <OurWorksAndProcess />
       <InsighedSection />
       <ImageViewSection />
     </div>

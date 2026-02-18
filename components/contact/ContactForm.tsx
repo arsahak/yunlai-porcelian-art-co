@@ -239,7 +239,7 @@ const ContactForm = () => {
                    <div className="mt-8">
                       <p className="text-gray-500 text-xs uppercase mb-3">{t.socialLabel}</p>
                       <div className="flex items-center gap-4 text-gray-900">
-                         <Link target='_blank' href="https://www.facebook.com/haozeceramicsfactory" className="hover:text-primary transition-colors"><Facebook size={20} /></Link>
+                         <Link target='_blank' href="https://www.facebook.com/yunlaiceramicsfactory/" className="hover:text-primary transition-colors"><Facebook size={20} /></Link>
                          <Link target='_blank' href="https://www.instagram.com/artyunlai/" className="hover:text-primary transition-colors"><Instagram size={20} /></Link>
                          {/* <Link target='_blank' href="#" className="hover:text-primary transition-colors"><Twitter size={20} /></Link>
                          <Link target='_blank' href="#" className="hover:text-primary transition-colors"><Youtube size={20} /></Link> */}

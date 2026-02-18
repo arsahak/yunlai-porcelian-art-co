@@ -191,7 +191,7 @@ const Footer = () => {
           <div className="flex items-center space-x-6">
             <Link
               target="_blank"
-              href="https://www.facebook.com/haozeceramicsfactory"
+              href="https://www.facebook.com/yunlaiceramicsfactory/"
               className="hover:text-primary transition-colors"
             >
               <Facebook size={20} />
