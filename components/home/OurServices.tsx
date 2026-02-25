@@ -31,12 +31,6 @@ const OurServices = () => {
       desc: t.items.greenWall.desc,
     },
     {
-      id: 4,
-      image: "/assets/home/1.5.jpg",
-      title: t.items.sampling.title,
-      desc: t.items.sampling.desc,
-    },
-    {
       id: 5,
       image: "/assets/home/1.jpg",
       title: t.items.newone.title,
