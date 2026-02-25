@@ -198,7 +198,7 @@ const Footer = () => {
             </Link>
             <Link
               target="_blank"
-              href="https://www.instagram.com/artyunlai/"
+              href="https://www.instagram.com/yixing_yunlai_zisha/"
               className="hover:text-primary transition-colors"
             >
               <Instagram size={20} />

@@ -54,15 +54,12 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative w-full h-[100dvh] md:h-[85vh] min-h-[500px] md:min-h-[600px] bg-[#F8F9FA] overflow-hidden">
+    <section className="relative w-full min-h-[560px] h-[60dvh] md:h-[100dvh] md:min-h-[700px] bg-[#F8F9FA] overflow-hidden">
       <Swiper
         modules={[Navigation, Autoplay, EffectFade]}
         effect="fade"
         speed={1000}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop={true}
         onSwiper={setSwiperInstance}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
@@ -70,7 +67,8 @@ const HeroSection = () => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={slide.id} className="w-full h-full relative">
-            {/* Slide Background Image - Full Width/Height */}
+
+            {/* Background Image */}
             <div className="absolute inset-0 w-full h-full z-0">
               <Image
                 src={slide.image}
@@ -79,96 +77,121 @@ const HeroSection = () => {
                 className="object-cover object-center"
                 priority
               />
-              {/* Overlay for text readability */}
-              <div className="absolute inset-0 z-10" />
+              {/* Gradient overlay — stronger at bottom on mobile, subtle on desktop */}
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/50 via-black/20 to-black/10 md:bg-gradient-to-r md:from-black/40 md:via-black/10 md:to-transparent" />
             </div>
 
-            {/* Content Container */}
-            <div className="container mx-auto h-full px-4 relative z-20 flex items-center pt-16 md:pt-20">
-              <div className="w-full">
-                {/* Left Content */}
-                <div className="space-y-6 max-w-7xl">
-                  <AnimatePresence mode="wait">
-                    {activeIndex === index && (
-                      <>
-                        <motion.h1
-                          initial={{ opacity: 0, y: 30 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -20 }}
-                          transition={{
-                            duration: 0.8,
-                            ease: "easeOut",
-                            delay: 0.2,
-                          }}
-                          className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-title leading-tight text-secondary"
-                        >
-                          {slide.titlePrefix} <br />
-                          <span className="text-primary italic">
-                            {slide.titleSuffix}
-                          </span>
-                        </motion.h1>
+            {/* Content */}
+            <div className="relative z-20 h-full flex items-center">
+              <div className="w-full container mx-auto px-5 sm:px-8 md:px-12 lg:px-16 pt-20 md:pt-0 pb-8 md:pb-0">
+                <AnimatePresence mode="wait">
+                  {activeIndex === index && (
+                    <div className="max-w-[1200px] space-y-4 md:space-y-6">
 
-                        <motion.p
-                          initial={{ opacity: 0, y: 30 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -20 }}
-                          transition={{
-                            duration: 0.8,
-                            ease: "easeOut",
-                            delay: 0.4,
-                          }}
-                          className="text-gray-800 text-base sm:text-lg md:text-xl font-sans leading-relaxed max-w-lg mt-6 font-medium"
-                        >
-                          {slide.subtitle}
-                        </motion.p>
+                      {/* Eyebrow tag */}
+                      <motion.span
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="inline-block text-xs sm:text-sm font-medium tracking-widest uppercase text-primary/90 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full"
+                      >
+                        Yunlai Porcelain Art
+                      </motion.span>
 
-                        <motion.div
-                          initial={{ opacity: 0, y: 30 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -20 }}
-                          transition={{
-                            duration: 0.8,
-                            ease: "easeOut",
-                            delay: 0.6,
-                          }}
-                          className="flex flex-wrap gap-4 pt-6 md:pt-8"
+                      {/* Heading */}
+                      <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-title leading-[1.1] text-white drop-shadow-md"
+                      >
+                        {slide.titlePrefix} <br className="hidden sm:block" />
+                        <span className="text-primary italic">
+                          {slide.titleSuffix}
+                        </span>
+                      </motion.h1>
+
+                      {/* Subtitle */}
+                      <motion.p
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+                        className="text-sm sm:text-base md:text-lg text-white/85 leading-relaxed font-medium max-w-sm md:max-w-lg drop-shadow-sm"
+                      >
+                        {slide.subtitle}
+                      </motion.p>
+
+                      {/* Buttons */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+                        className="flex flex-row flex-wrap gap-3 sm:gap-4 pt-2 md:pt-4"
+                      >
+                        <Button
+                          href="/contact-us"
+                          className="!px-5 sm:!px-8 !py-2.5 sm:!py-3 text-sm sm:text-base shadow-lg hover:shadow-xl bg-primary hover:bg-primary/90"
                         >
-                          <Button
-                            href="/contact-us"
-                            className="!px-8 !py-3 shadow-lg hover:shadow-xl bg-primary hover:bg-primary/90"
-                          >
-                            {t.Common.contactUs}
-                          </Button>
-                          <Button
-                            href="/about-us"
-                            className="!px-8 !py-3 border-2 border-primary text-primary hover:bg-primary/5 shadow-none hover:shadow-sm !bg-transparent"
-                            textColor="text-primary"
-                          >
-                            {t.Common.learnMore}
-                          </Button>
-                        </motion.div>
-                      </>
-                    )}
-                  </AnimatePresence>
-                </div>
+                          {t.Common.contactUs}
+                        </Button>
+                        <Button
+                          href="/about-us"
+                          className="!px-5 sm:!px-8 !py-2.5 sm:!py-3 border-2 border-white text-white hover:bg-white/10 shadow-none !bg-transparent text-sm sm:text-base"
+                          textColor="text-white"
+                        >
+                          {t.Common.learnMore}
+                        </Button>
+                      </motion.div>
+                    </div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
+
+            {/* Slide counter — bottom right, all screens */}
+            <div className="absolute bottom-6 right-5 sm:right-8 z-30 flex items-center gap-1.5">
+              <span className="text-white font-medium text-sm tabular-nums">
+                {String(activeIndex + 1).padStart(2, "0")}
+              </span>
+              <span className="text-white/50 text-sm">/</span>
+              <span className="text-white/50 text-sm">
+                {String(slides.length).padStart(2, "0")}
+              </span>
+            </div>
+
+            {/* Mobile dot indicators */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:hidden">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => swiperInstance?.slideTo(i)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeIndex === i ? "bg-primary w-6" : "bg-white/60 w-1.5"
+                  }`}
+                />
+              ))}
+            </div>
+
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Custom Navigation Arrows */}
+      {/* Desktop Navigation Arrows */}
       <button
         onClick={() => swiperInstance?.slidePrev()}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/50 hover:bg-white backdrop-blur-sm shadow-sm transition-all text-secondary hover:text-primary z-20 hidden md:block group cursor-pointer"
+        className="absolute left-4 md:left-6 lg:left-8 top-1/2 -translate-y-1/2 p-2.5 md:p-3 rounded-full bg-white/20 hover:bg-white/70 backdrop-blur-sm border border-white/30 shadow-sm transition-all text-white hover:text-primary z-20 hidden md:flex items-center justify-center group cursor-pointer"
       >
-        <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
+        <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 group-hover:-translate-x-0.5 transition-transform" />
       </button>
       <button
         onClick={() => swiperInstance?.slideNext()}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/50 hover:bg-white backdrop-blur-sm shadow-sm transition-all text-secondary hover:text-primary z-20 hidden md:block group cursor-pointer"
+        className="absolute right-4 md:right-6 lg:right-8 top-1/2 -translate-y-1/2 p-2.5 md:p-3 rounded-full bg-white/20 hover:bg-white/70 backdrop-blur-sm border border-white/30 shadow-sm transition-all text-white hover:text-primary z-20 hidden md:flex items-center justify-center group cursor-pointer"
       >
-        <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
+        <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-0.5 transition-transform" />
       </button>
     </section>
   );

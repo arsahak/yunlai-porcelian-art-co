@@ -3,7 +3,7 @@
 import { useLocale } from '@/lib/i18n';
 import Translations from '@/messages/translations';
 import emailjs from '@emailjs/browser';
-import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -34,8 +34,6 @@ const ContactForm = () => {
     setIsSubmitting(true);
     setStatus(null);
 
-    // Map form data to template parameters
-    // Note: The keys here should match the variables in your EmailJS template.
     const templateParams = {
         company: formData.company,
         from_name: formData.name, 
@@ -70,11 +68,15 @@ const ContactForm = () => {
     }
   };
 
+  // Shared input class — always light themed
+  const inputCls = "w-full border-b border-gray-300 py-3 focus:border-primary focus:outline-none transition-colors bg-white text-gray-900 placeholder:text-gray-400";
+  const labelCls = "block text-sm font-medium text-gray-700 mb-1";
+
   return (
-    <div className="w-full">
+    <div className="w-full bg-white text-gray-900">
       {/* Top Section: Form */}
       <ScrollMotion animation="fade-up">
-      <section className="container mx-auto px-4 py-8 md:py-20">
+      <section className="container mx-auto px-4 py-8 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 space-y-2">
             <h2 className="text-3xl md:text-5xl font-title text-gray-900 leading-tight">
@@ -85,14 +87,14 @@ const ContactForm = () => {
           <form onSubmit={handleSubmit} className="space-y-10">
             {/* Row 1 */}
             <div className="w-full">
-               <label className="block text-sm font-medium text-gray-700 mb-1">{t.company} <span className="text-red-500">*</span></label>
+               <label className={labelCls}>{t.company} <span className="text-red-500">*</span></label>
                <input 
                  type="text" 
                  name="company"
                  required
                  value={formData.company}
                  onChange={handleChange}
-                 className="w-full border-b border-gray-200 py-3 focus:border-primary focus:outline-none transition-colors bg-transparent"
+                 className={inputCls}
                  placeholder={t.companyPlaceholder}
                />
             </div>
@@ -100,67 +102,67 @@ const ContactForm = () => {
             {/* Row 2 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">{t.name} <span className="text-red-500">*</span></label>
-                  <input 
-                    type="text" 
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full border-b border-gray-200 py-3 focus:border-primary focus:outline-none transition-colors bg-transparent"
-                    placeholder={t.namePlaceholder}
-                  />
+                  <label className={labelCls}>{t.name} <span className="text-red-500">*</span></label>
+                   <input 
+                     type="text" 
+                     name="name"
+                     required
+                     value={formData.name}
+                     onChange={handleChange}
+                     className={inputCls}
+                     placeholder={t.namePlaceholder}
+                   />
                </div>
                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">{t.country} <span className="text-red-500">*</span></label>
-                  <input 
-                    type="text" 
-                    name="country"
-                    required
-                    value={formData.country}
-                    onChange={handleChange}
-                    className="w-full border-b border-gray-200 py-3 focus:border-primary focus:outline-none transition-colors bg-transparent"
-                    placeholder={t.countryPlaceholder}
-                  />
+                  <label className={labelCls}>{t.country} <span className="text-red-500">*</span></label>
+                   <input 
+                     type="text" 
+                     name="country"
+                     required
+                     value={formData.country}
+                     onChange={handleChange}
+                     className={inputCls}
+                     placeholder={t.countryPlaceholder}
+                   />
                </div>
             </div>
 
             {/* Row 3 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">{t.email} <span className="text-red-500">*</span></label>
-                  <input 
-                    type="email" 
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full border-b border-gray-200 py-3 focus:border-primary focus:outline-none transition-colors bg-transparent"
-                    placeholder={t.emailPlaceholder}
-                  />
+                  <label className={labelCls}>{t.email} <span className="text-red-500">*</span></label>
+                   <input 
+                     type="email" 
+                     name="email"
+                     required
+                     value={formData.email}
+                     onChange={handleChange}
+                     className={inputCls}
+                     placeholder={t.emailPlaceholder}
+                   />
                </div>
                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">{t.phone}</label>
-                  <input 
-                    type="tel" 
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full border-b border-gray-200 py-3 focus:border-primary focus:outline-none transition-colors bg-transparent"
-                    placeholder={t.phonePlaceholder}
-                  />
+                  <label className={labelCls}>{t.phone}</label>
+                   <input 
+                     type="tel" 
+                     name="phone"
+                     value={formData.phone}
+                     onChange={handleChange}
+                     className={inputCls}
+                     placeholder={t.phonePlaceholder}
+                   />
                </div>
             </div>
 
              {/* Message */}
             <div className="w-full">
-               <label className="block text-sm font-medium text-gray-700 mb-1">{t.message}</label>
+               <label className={labelCls}>{t.message}</label>
                <textarea 
                  name="message"
                  rows={1}
                  value={formData.message}
                  onChange={handleChange}
-                 className="w-full border-b border-gray-200 py-3 focus:border-primary focus:outline-none transition-colors bg-transparent resize-none"
+                 className={`${inputCls} resize-none`}
                  placeholder={t.messagePlaceholder}
                />
             </div>
@@ -195,9 +197,6 @@ const ContactForm = () => {
       {/* Bottom Section: Info Cards */}
       <ScrollMotion animation="fade-up">
       <section className="w-full bg-[#FAFAFA] relative overflow-hidden py-8 md:py-20">
-        {/* Background decorative pattern - simplified topographic approximation using CSS opacity rings or similar, 
-            or just clean background as specific svg is not available. 
-            Using a subtle faint pattern if possible, or just whitespace. */}
         <div className="absolute inset-0 z-0">
              <Image
                src="/assets/contact/contact-image.png" 
@@ -222,7 +221,7 @@ const ContactForm = () => {
                 
                 {/* Card 1 */}
                 <div className="bg-white p-8 rounded-2xl shadow-sm flex-1 min-h-[280px] flex flex-col">
-                   <h4 className="font-title text-lg mb-6">{t.infoCardTitle}</h4>
+                   <h4 className="font-title text-lg mb-6 text-gray-900">{t.infoCardTitle}</h4>
                    <div className="w-8 h-0.5 bg-black mb-6"></div>
                    
                    <div className="space-y-4 flex-grow">
@@ -240,16 +239,14 @@ const ContactForm = () => {
                       <p className="text-gray-500 text-xs uppercase mb-3">{t.socialLabel}</p>
                       <div className="flex items-center gap-4 text-gray-900">
                          <Link target='_blank' href="https://www.facebook.com/haozeceramicsfactory" className="hover:text-primary transition-colors"><Facebook size={20} /></Link>
-                         <Link target='_blank' href="https://www.instagram.com/artyunlai/" className="hover:text-primary transition-colors"><Instagram size={20} /></Link>
-                         {/* <Link target='_blank' href="#" className="hover:text-primary transition-colors"><Twitter size={20} /></Link>
-                         <Link target='_blank' href="#" className="hover:text-primary transition-colors"><Youtube size={20} /></Link> */}
+                         <Link target='_blank' href="https://www.instagram.com/yixing_yunlai_zisha" className="hover:text-primary transition-colors"><Instagram size={20} /></Link>
                       </div>
                    </div>
                 </div>
 
                 {/* Card 2 */}
                 <div className="bg-white p-8 rounded-2xl shadow-sm flex-1 min-h-[280px] flex flex-col">
-                   <h4 className="font-title text-lg mb-6">{t.addressCardTitle}</h4>
+                   <h4 className="font-title text-lg mb-6 text-gray-900">{t.addressCardTitle}</h4>
                    <div className="w-8 h-0.5 bg-black mb-6"></div>
                    
                    <div className="space-y-4 flex-grow">
