@@ -119,7 +119,7 @@ const InsighedSection = () => {
                     
                     {/* Category Badge */}
                     {blog.category && (
-                      <div className="absolute top-3 left-3 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      <div className="absolute top-3 left-3 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">
                         {blog.category}
                       </div>
                     )}

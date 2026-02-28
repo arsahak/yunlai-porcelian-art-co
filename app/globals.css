@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
-  --primary: #28883D;
+  --primary: #28883d;
   --secondary: #000000;
 }
 
@@ -26,9 +26,20 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    var(--font-inter),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-kefir-medium), serif;
 }

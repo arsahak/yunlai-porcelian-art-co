@@ -24,51 +24,159 @@
     "flashSale": "限时特卖警报：最高省 40% - 库存有限，欲购从速！"
   },
   "Footer": {
-    "subscribeTitle": "订阅我们的通讯",
-    "subscribePlaceholder": "youremail123@gmail.com",
-    "subscribeBtn": "订阅",
-    "sending": "发送中...",
-    "description": "Aurora Pots 制造的户外玻璃纤维花盆旨在体现永恒的品质。由优质玻璃纤维制成，每个花盆都能承受各种恶劣天气...",
-    "learnMore": "了解更多",
-    "support": "客户支持",
-    "contact": "联系我们",
-    "hotelRes": "酒店预订",
-    "ticketOffice": "售票处",
-    "rights": "© 2026 Yixing Yunlai Zisha Art and Culture Co. Ltd. | All Rights Reserved"
+    "quoteTitle": "获取批发报价",
+    "quoteDescription": "联系我们获取批量陶瓷花盆定价、OEM定制和集装箱运输详情。",
+    "quoteTrustLine": "起订量：1000-2000件 | 300+名工人 | 可OEM定制 | 2个月交货期",
+    "quoteButton": "申请报价",
+    "description": "宜兴云莱紫砂艺术文化有限公司是一家位于中国宜兴的陶瓷花盆制造商。我们专注于宜兴紫砂盆、OEM定制和为全球进口商、分销商和景观项目提供批发供应。",
+    "companyColumn": "公司",
+    "productsColumn": "产品",
+    "supportColumn": "支持",
+    "company": {
+      "aboutFactory": "关于工厂",
+      "productionProcess": "生产流程",
+      "ourServices": "我们的服务",
+      "blogInsights": "博客/见解"
+    },
+    "products": {
+      "small": "小型陶瓷盆",
+      "medium": "中型陶瓷盆",
+      "large": "大型户外盆",
+      "custom": "定制OEM盆"
+    },
+    "support": {
+      "catalog": "目录下载",
+      "shipping": "运输与包装",
+      "oem": "OEM定制",
+      "contact": "联系我们"
+    },
+    "contact": {
+      "email": "电子邮箱",
+      "emailValue": "info@yixingyunlai.com",
+      "mobile": "手机",
+      "mobileValue": "+86 151 9021 8529",
+      "address": "工厂地址",
+      "addressValue": "中国江苏省宜兴市丁蜀镇同里中路2号"
+    },
+    "rights": "© 2026 宜兴云莱紫砂艺术文化有限公司 | 保留所有权利"
   },
   "Insights": {
-    "titlePrefix": "目录故事 &",
-    "titleSuffix": "产品见解",
-    "subtitle": "您室内外景观的全方位服务合作伙伴",
+    "titlePrefix": "陶瓷花盆见解与",
+    "titleSuffix": "工厂故事",
+    "subtitle": "关于陶瓷花盆、OEM制造和全球批发供应的见解。",
     "explore": "探索更多",
-    "articleTitle": "是什么让 Aurora Pots 的户外玻璃纤维花盆脱颖而出？",
-    "articleDesc": "Aurora Pots 制造的户外玻璃纤维花盆旨在体现永恒的品质。由优质玻璃纤维制成，每个花盆都能承受各种恶劣天气...",
-    "date": "2025年4月11日"
+    "blogCards": {
+      "card1": {
+        "title": "全球运输、定制订单和可靠的售后支持",
+        "desc": "我们为全球批发买家和进口商提供安全的全球运输、定制OEM生产和可靠的支持。",
+        "tag": "出口支持"
+      },
+      "card2": {
+        "title": "为什么专业种植者和设计师选择紫砂盆",
+        "desc": "我们的宜兴陶瓷花盆被园艺中心、景观设计师和分销商广泛用于耐用的大规模种植需求。",
+        "tag": "工厂见解"
+      },
+      "card3": {
+        "title": "正宗宜兴紫砂花盆背后的艺术与科学",
+        "desc": "由正宗宜兴紫砂泥制成并经高温烧制，我们的花盆结合了耐用性、工艺和长期户外性能。",
+        "tag": "OEM指南"
+      }
+    },
+    "date": "最新"
   },
   "WorksProcess": {
-    "titlePrefix": "我们的",
-    "titleSuffix": "作品与流程",
-    "projectTitle": "One&Only Za'abeel，扎根于奢华",
-    "location": "迪拜",
-    "date": "2025年1月12日",
-    "processTitlePrefix": "我们的",
-    "processTitleSuffix": "工作流程",
+    "titlePrefix": "从订单到",
+    "titleSuffix": "交付流程",
+    "projectTitle": "生产与包装流程",
+    "location": "中国宜兴",
+    "date": "工厂流程",
+    "processTitlePrefix": "从订单到",
+    "processTitleSuffix": "交付流程",
+    "trustLine": "起订量：1000-2000件 | 300+名工人 | 2个月生产交货期 | 可OEM定制",
     "steps": {
-      "step1": { "title": "设计会议", "desc": "在我们的初次会议中，我们会详细讨论您的需求并制定定制的景观解决方案。" },
-      "step2": { "title": "项目规范", "desc": "根据您的要求，我们为您提供您选择的所有产品的规格说明。" },
-      "step3": { "title": "客户批准", "desc": "如果没有修改意见，我们将继续从您那里获得正式批准。" },
-      "step4": { "title": "安装与维护", "desc": "一旦批准，我们将继续打造您的理想空间并对其进行有效维护。" }
+      "step1": { "title": "询价与需求确认", "desc": "我们讨论您所需的花盆尺寸、数量、釉面以及批发订单的定制细节。" },
+      "step2": { "title": "样品生产与批准", "desc": "我们根据您的规格生产样品，以在批量生产前确认质量、颜色和设计。" },
+      "step3": { "title": "批量生产与质量控制", "desc": "批准后，我们使用宜兴紫砂泥和高温窑烧（1000-1200°C）开始批量生产。" },
+      "step4": { "title": "包装与全球出口交付", "desc": "成品花盆采用托盘或木箱牢固包装，并通过20GP或40HQ集装箱运往全球。" }
     }
   },
   "Services": {
-    "titlePrefix": "我们的",
-    "titleSuffix": "服务",
-    "subtitle": "您室内外景观的全方位服务合作伙伴",
+    "titlePrefix": "我们的批发服务与",
+    "titleSuffix": "OEM支持",
+    "subtitle": "为全球批发买家提供专业的OEM、批量生产和出口支持。",
+    "trustLine": "起订量：1000-2000件 | 300+名工人 | 可OEM定制 | 2个月交货期 | 宜兴紫砂",
     "items": {
-      "sampling": { "title": "生产前打样", "desc": "我们的打样服务允许客户在生产开始前完善每一个细节——从形状和比例到纹理和表面处理。" },
-      "landscaping": { "title": "室内外景观", "desc": "我们的打样服务允许客户在生产开始前完善每一个细节——从形状和比例到纹理和表面处理。" },
-      "greenWall": { "title": "绿墙", "desc": "我们的打样服务允许客户在生产开始前完善每一个细节——从形状和比例到纹理和表面处理。" },
-      "newone": { "title": "Export & Container Loading Support", "desc": "Our sampling service allows clients to refine every detail before production begins — from shape and proportion to texture and finish." }
+      "sampling": { 
+        "title": "生产前打样", 
+        "desc": "在批量生产前，我们提供样品制作，以根据您的要求确认尺寸、釉色和质量。",
+        "slug": "sampling"
+      },
+      "oemCustomization": { 
+        "title": "OEM定制", 
+        "desc": "我们支持为批发和自有品牌买家定制尺寸、颜色、釉面和标志印刷。",
+        "slug": "oem-customization"
+      },
+      "bulkPackaging": { 
+        "title": "批量包装（托盘/木箱）", 
+        "desc": "所有陶瓷花盆均采用托盘或木箱包装牢固包装，确保国际运输安全。",
+        "slug": "packaging"
+      },
+      "exportSupport": { 
+        "title": "出口与集装箱装载支持", 
+        "desc": "我们协助集装箱装载（20GP / 40HQ）、出口文件和批发订单的全球运输。",
+        "slug": "export"
+      }
+    }
+  },
+  "ServiceDetails": {
+    "sampling": {
+      "title": "生产前打样流程",
+      "intro": "在批量生产之前，我们会根据您要求的尺寸、形状、釉色和表面处理创建样品。这有助于买家在批量生产前确认质量、颜色和规格。我们支持样品调整以匹配您的市场需求和项目标准。",
+      "features": [
+        "尺寸确认",
+        "釉色测试",
+        "表面处理检查",
+        "结构耐用性审查"
+      ],
+      "note": "样品生产时间通常取决于设计复杂性。",
+      "trustLine": "起订量：1000-2000件 | 300+名工人 | 可OEM定制 | 2个月交货期"
+    },
+    "oem-customization": {
+      "title": "OEM与定制陶瓷盆制造",
+      "intro": "我们为批发买家、进口商和分销商提供全面的OEM定制。您可以根据品牌和市场需求定制花盆尺寸、釉色、纹理、标志和包装。",
+      "features": [
+        "定制尺寸（小型到超大型花盆）",
+        "定制釉面（哑光、光泽、纹理）",
+        "自有品牌标志印刷",
+        "定制模具开发",
+        "批量订单定制"
+      ],
+      "note": "所有花盆均采用宜兴紫砂泥和高温窑烧制成。",
+      "trustLine": "起订量：1000-2000件 | 300+名工人 | 可OEM定制 | 2个月交货期"
+    },
+    "packaging": {
+      "title": "批量包装与安全出口包装",
+      "intro": "对于国际批发订单，我们使用坚固的托盘和木箱包装以确保安全运输。每个陶瓷花盆都经过精心保护，以减少长途运输中的破损。",
+      "features": [
+        "托盘包装",
+        "木箱包装",
+        "保护性内部材料",
+        "批量集装箱装载安全"
+      ],
+      "note": "此包装方法适用于美国、欧洲和中东地区的货运。",
+      "trustLine": "起订量：1000-2000件 | 300+名工人 | 可OEM定制 | 2个月交货期"
+    },
+    "export": {
+      "title": "出口与全球运输支持",
+      "intro": "我们支持批量陶瓷花盆订单的全球出口。我们的团队协助集装箱装载、出口文件和国际货运协调。",
+      "features": [
+        "20GP集装箱",
+        "40HQ集装箱",
+        "生产和交付的交货期约为2个月，具体取决于订单数量",
+        "我们主要供应全球进口商、园艺中心、分销商和景观公司"
+      ],
+      "note": "包含专业的出口文件和物流协调。",
+      "trustLine": "起订量：1000-2000件 | 300+名工人 | 可OEM定制 | 2个月交货期"
     }
   },
   "NewToYou": {

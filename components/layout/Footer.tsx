@@ -2,103 +2,37 @@
 
 import { useLocale } from "@/lib/i18n";
 import translations from "@/messages/translations";
-import emailjs from "@emailjs/browser";
-import { Facebook, Instagram, Mail } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 const Footer = () => {
   const { locale } = useLocale();
   const t = translations[locale].Footer;
 
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<{
-    type: "success" | "error";
-    message: string;
-  } | null>(null);
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setLoading(true);
-    setStatus(null);
-
-    const templateParams = {
-      company: "Newsletter Subscriber",
-      from_name: "Subscriber",
-      country: "",
-      from_email: email,
-      phone: "",
-      message: "Newsletter Subscription Request",
-      date: new Date().toLocaleString(),
-    };
-
-    try {
-      await emailjs.send(
-        "service_xh718mb",
-        "template_s8cavho",
-        templateParams,
-        "JSTIICpi4oohGdpyw",
-      );
-      setStatus({ type: "success", message: "Subscribed successfully!" });
-      setEmail("");
-    } catch (error) {
-      console.error("FAILED...", error);
-      setStatus({
-        type: "error",
-        message: "Failed to subscribe. Please try again.",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <footer className="w-full bg-[#f8f9fa] pt-16 pb-8">
       <div className="container mx-auto px-4">
-        {/* Newsletter Banner */}
+        {/* Wholesale Quote CTA Banner */}
         <div className="w-full bg-primary rounded-3xl p-6 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 mb-16 shadow-xl relative overflow-hidden">
-          {/* Decorative sheen/glow could be added here */}
-
-          <div className="max-w-md text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white leading-tight">
-              {t.subscribeTitle}
+          <div className="max-w-xl text-center lg:text-left">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white leading-tight mb-3">
+              {t.quoteTitle}
             </h2>
-            {status && (
-              <p
-                className={`mt-2 text-sm font-medium ${status.type === "success" ? "text-green-200" : "text-red-200"}`}
-              >
-                {status.message}
-              </p>
-            )}
+            <p className="text-white/90 text-base md:text-lg mb-3">
+              {t.quoteDescription}
+            </p>
+            <p className="text-white/80 text-sm font-medium">
+              {t.quoteTrustLine}
+            </p>
           </div>
 
-          <form
-            onSubmit={handleSubscribe}
-            className="w-full max-w-lg bg-white p-2 rounded-2xl md:rounded-full flex flex-col md:flex-row items-center shadow-lg gap-2 md:gap-0"
+          <Link
+            href="/contact"
+            className="bg-white hover:bg-gray-100 text-primary font-bold text-base px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl uppercase tracking-wider"
           >
-            <div className="flex-1 flex items-center w-full px-4 md:pl-6 h-12 md:h-auto">
-              <Mail className="w-5 h-5 text-gray-400 mr-3 shrink-0" />
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t.subscribePlaceholder}
-                className="flex-1 bg-transparent border-none outline-none text-gray-700 placeholder-gray-400 h-full py-2 min-w-0"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full md:w-auto bg-primary hover:bg-green-700 text-white font-bold text-sm px-8 py-3 rounded-xl md:rounded-full transition-colors uppercase tracking-wider shrink-0 shadow-md md:shadow-none disabled:opacity-70 disabled:cursor-not-allowed"
-            >
-              {loading ? t.sending : t.subscribeBtn}
-            </button>
-          </form>
+            {t.quoteButton}
+          </Link>
         </div>
 
         {/* Main Footer Content */}
@@ -111,8 +45,8 @@ const Footer = () => {
                 alt="Yunlai Porcelain"
                 fill
                 className="object-contain"
+                unoptimized
               />
-              {/* Fallback circle if logo fails/is transparent */}
               <div className="absolute inset-0 border-2 border-primary rounded-full -z-10" />
             </Link>
             <p className="text-gray-500 leading-relaxed text-sm md:text-base lg:pr-4 mx-auto lg:mx-0 max-w-md lg:max-w-none">
@@ -120,64 +54,163 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Links Column 1 */}
+          {/* Company Column */}
           <div className="lg:col-span-2 lg:col-start-6 text-center min-[480px]:text-left">
             <h3 className="font-serif font-bold text-lg text-secondary mb-6">
-              {t.learnMore}
+              {t.companyColumn}
             </h3>
             <ul className="space-y-4">
-              {[
-                "About Us",
-                "Process",
-                "Environment",
-                "Careers",
-                "Privacy Policy",
-              ].map((item) => (
-                <li key={item}>
-                  <Link
-                    href="#"
-                    className="text-gray-500 hover:text-primary transition-colors text-sm"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.company.aboutFactory}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.company.productionProcess}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/wholesale-services/sampling"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.company.ourServices}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.company.blogInsights}
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Links Column 2 */}
+          {/* Products Column */}
           <div className="lg:col-span-2 text-center min-[480px]:text-left">
             <h3 className="font-serif font-bold text-lg text-secondary mb-6">
-              {t.support}
+              {t.productsColumn}
             </h3>
             <ul className="space-y-4">
-              {["Customer Care", "Shipping", "Returns", "FAQ"].map((item) => (
-                <li key={item}>
-                  <Link
-                    href="#"
-                    className="text-gray-500 hover:text-primary transition-colors text-sm"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/products"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.products.small}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.products.medium}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.products.large}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/wholesale-services/oem-customization"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.products.custom}
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* Support Column (B2B Style) */}
           <div className="lg:col-span-3 text-center min-[480px]:text-left">
             <h3 className="font-serif font-bold text-lg text-secondary mb-6">
-              {t.contact}
+              {t.supportColumn}
             </h3>
-            <div className="space-y-4 text-sm text-gray-500 flex flex-col items-center min-[480px]:items-start">
-              <div>
-                <p className="font-medium text-gray-900 mb-1">Mobile:</p>
-                <p>+86 151 9021 8529</p>
+            <ul className="space-y-4 mb-6">
+              <li>
+                <Link
+                  href="/catalog"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.support.catalog}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/wholesale-services/packaging"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.support.shipping}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/wholesale-services/oem-customization"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.support.oem}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-500 hover:text-primary transition-colors text-sm"
+                >
+                  {t.support.contact}
+                </Link>
+              </li>
+            </ul>
+
+            {/* Contact Info */}
+            <div className="space-y-3 text-sm text-gray-500 flex flex-col items-center min-[480px]:items-start">
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                <div>
+                  <p className="font-medium text-gray-900">{t.contact.email}:</p>
+                  <a
+                    href={`mailto:${t.contact.emailValue}`}
+                    className="hover:text-primary transition-colors"
+                  >
+                    {t.contact.emailValue}
+                  </a>
+                </div>
               </div>
-              {/* <div>
-                  <p className="font-medium text-gray-900 mb-1">{t.ticketOffice}:</p>
-                  <p>123-456-7890</p>
-               </div> */}
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                <div>
+                  <p className="font-medium text-gray-900">{t.contact.mobile}:</p>
+                  <a
+                    href={`tel:${t.contact.mobileValue}`}
+                    className="hover:text-primary transition-colors"
+                  >
+                    {t.contact.mobileValue}
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-medium text-gray-900">{t.contact.address}:</p>
+                  <p className="text-gray-500 leading-relaxed">
+                    {t.contact.addressValue}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -192,14 +225,14 @@ const Footer = () => {
             <Link
               target="_blank"
               href="https://www.facebook.com/yunlaiceramicsfactory/"
-              className="hover:text-primary transition-colors"
+              className="text-gray-400 hover:text-primary transition-colors"
             >
               <Facebook size={20} />
             </Link>
             <Link
               target="_blank"
               href="https://www.instagram.com/yixing_yunlai_zisha/"
-              className="hover:text-primary transition-colors"
+              className="text-gray-400 hover:text-primary transition-colors"
             >
               <Instagram size={20} />
             </Link>

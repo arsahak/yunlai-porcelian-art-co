@@ -24,35 +24,75 @@
     "flashSale": "Flash Sale Alert: Save Up to 40% - Limited Stock, Act Fast!"
   },
   "Footer": {
-    "subscribeTitle": "Subscribe to Our Newsletter",
-    "subscribePlaceholder": "youremail123@gmail.com",
-    "subscribeBtn": "SUBSCRIBE",
-    "sending": "Sending...",
+    "quoteTitle": "Get Wholesale Quote",
+    "quoteDescription": "Contact us for bulk ceramic pot pricing, OEM customization, and container shipment details.",
+    "quoteTrustLine": "MOQ: 1000–2000 pcs | 300+ Workers | OEM Available | 2-Month Lead Time",
+    "quoteButton": "Request Quote",
     "description": "Yixing Yunlai Zisha Art and Culture Co., Ltd. is a ceramic flower pot manufacturer based in Yixing, China. We specialize in Yixing purple clay pots, OEM customization, and bulk wholesale supply for global importers, distributors, and landscaping projects.",
-    "learnMore": "Learn More",
-    "support": "Support",
-    "contact": "Contact Us",
-    "hotelRes": "Hotel Reservation",
-    "ticketOffice": "Ticket Office",
-    "rights": "© 2026 Yixing Yunlai Zisha Art and Culture Co. Ltd. | All Rights Reserved"
+    "companyColumn": "Company",
+    "productsColumn": "Products",
+    "supportColumn": "Support",
+    "company": {
+      "aboutFactory": "About Factory",
+      "productionProcess": "Production Process",
+      "ourServices": "Our Services",
+      "blogInsights": "Blog / Insights"
+    },
+    "products": {
+      "small": "Small Ceramic Pots",
+      "medium": "Medium Ceramic Pots",
+      "large": "Large Outdoor Pots",
+      "custom": "Custom OEM Pots"
+    },
+    "support": {
+      "catalog": "Catalog Download",
+      "shipping": "Shipping & Packaging",
+      "oem": "OEM Customization",
+      "contact": "Contact Us"
+    },
+    "contact": {
+      "email": "Email",
+      "emailValue": "info@yixingyunlai.com",
+      "mobile": "Mobile",
+      "mobileValue": "+86 151 9021 8529",
+      "address": "Factory Address",
+      "addressValue": "No.2, Tongli Middle Road, Dingshu Town, Yixing City, Jiangsu, China"
+    },
+    "rights": "© 2026 Yixing Yunlai Zisha Art and Culture Co., Ltd. | All Rights Reserved"
   },
   "Insights": {
     "titlePrefix": "Ceramic Pot Insights &",
     "titleSuffix": "Factory Stories",
-    "subtitle": "Professional OEM, bulk production, and export support for global wholesale buyers",
+    "subtitle": "Insights on ceramic flower pots, OEM manufacturing, and global wholesale supply.",
     "explore": "Explore More",
-    "articleTitle": "What Makes Aurora Pots' Outdoor Fiberglass Planters Truly Stand Out?",
-    "articleDesc": "Outdoor fiberglass planters crafted at Aurora Pots are designed to embody timeless quality. Made from premium-grade fiberglass, each planter is built to endure the elements...",
-    "date": "04.11.2025"
+    "blogCards": {
+      "card1": {
+        "title": "Global Shipping, Custom Orders, and Reliable After-Sales Support",
+        "desc": "We provide secure global shipping, custom OEM production, and reliable support for wholesale buyers and importers worldwide.",
+        "tag": "Export Support"
+      },
+      "card2": {
+        "title": "Why Professional Growers and Designers Choose Zisha Pots",
+        "desc": "Our Yixing ceramic pots are widely used by garden centers, landscapers, and distributors for durable and large-scale planting needs.",
+        "tag": "Factory Insight"
+      },
+      "card3": {
+        "title": "The Art and Science Behind Authentic Yixing Zisha Flowerpots",
+        "desc": "Made from authentic Yixing purple clay and high-temperature firing, our pots combine durability, craftsmanship, and long-term outdoor performance.",
+        "tag": "OEM Guide"
+      }
+    },
+    "date": "Recent"
   },
   "WorksProcess": {
-    "titlePrefix": "Our",
-    "titleSuffix": "Works & Process",
-    "projectTitle": "One&Only Za'abeel, Rooted in Luxury",
-    "location": "Dubai",
-    "date": "12 January, 2025",
-    "processTitlePrefix": "From ",
-    "processTitleSuffix": "Order to Delivery Process",
+    "titlePrefix": "From Order to",
+    "titleSuffix": "Delivery Process",
+    "projectTitle": "Production & Packing Process",
+    "location": "Yixing, China",
+    "date": "Factory Process",
+    "processTitlePrefix": "From Order to",
+    "processTitleSuffix": "Delivery Process",
+    "trustLine": "MOQ: 1000–2000 pcs | 300+ Workers | 2-Month Production Lead Time | OEM Available",
     "steps": {
       "step1": { "title": "Inquiry & Requirement Confirmation", "desc": "We discuss your required pot size, quantity, glaze finish, and customization details for bulk wholesale orders." },
       "step2": { "title": "Sample Production & Approval", "desc": "We produce samples based on your specifications to confirm quality, color, and design before mass production" },
@@ -61,15 +101,82 @@
     }
   },
   "Services": {
-    "titlePrefix": "Our",
-    "titleSuffix": "Wholesale Services & OEM Support",
-    "subtitle": "Professional OEM, bulk production, and export support for global wholesale buyers",
+    "titlePrefix": "Our Wholesale Services &",
+    "titleSuffix": "OEM Support",
+    "subtitle": "Professional OEM, bulk production, and export support for global wholesale buyers.",
+    "trustLine": "MOQ: 1000–2000 pcs | 300+ Workers | OEM Available | 2-Month Lead Time | Yixing Purple Clay",
     "items": {
-      "sampling": { "title": "Pre-Production Sampling", "desc": "We provide sample production before mass manufacturing to confirm size, glaze, and quality based on your requirements." },
-      "landscaping": { "title": "OEM Customization", "desc": "We support custom sizes, colors, glaze finishes, and logo printing for bulk wholesale and private label buyers." },
-      "greenWall": { "title": "Bulk Packaging (Pallet / Wooden Crate)", "desc": "All ceramic pots are packed securely using pallet or wooden crate packaging to ensure safe international shipping." },
-
-      "newone": { "title": "Export & Container Loading Support", "desc": "We assist with container loading (20GP / 40HQ), export documents, and global shipment for wholesale orders." }
+      "sampling": { 
+        "title": "Pre-Production Sampling", 
+        "desc": "We provide sample production before mass manufacturing to confirm size, glaze, and quality based on your requirements.",
+        "slug": "sampling"
+      },
+      "oemCustomization": { 
+        "title": "OEM Customization", 
+        "desc": "We support custom sizes, colors, glaze finishes, and logo printing for bulk wholesale and private label buyers.",
+        "slug": "oem-customization"
+      },
+      "bulkPackaging": { 
+        "title": "Bulk Packaging (Pallet / Wooden Crate)", 
+        "desc": "All ceramic pots are packed securely using pallet or wooden crate packaging to ensure safe international shipping.",
+        "slug": "packaging"
+      },
+      "exportSupport": { 
+        "title": "Export & Container Loading Support", 
+        "desc": "We assist with container loading (20GP / 40HQ), export documents, and global shipment for wholesale orders.",
+        "slug": "export"
+      }
+    }
+  },
+  "ServiceDetails": {
+    "sampling": {
+      "title": "Pre-Production Sampling Process",
+      "intro": "Before mass production, we create samples based on your requested size, shape, glaze, and finish. This helps buyers confirm quality, color, and specifications before bulk manufacturing. We support sample adjustments to match your market requirements and project standards.",
+      "features": [
+        "Size confirmation",
+        "Glaze color testing",
+        "Surface finish checking",
+        "Structural durability review"
+      ],
+      "note": "Sample production time usually depends on design complexity.",
+      "trustLine": "MOQ: 1000–2000 pcs | 300+ Workers | OEM Available | 2-Month Lead Time"
+    },
+    "oem-customization": {
+      "title": "OEM & Custom Ceramic Pot Manufacturing",
+      "intro": "We provide full OEM customization for wholesale buyers, importers, and distributors. You can customize pot size, glazing color, texture, logo, and packaging based on your brand and market needs.",
+      "features": [
+        "Custom sizes (small to extra-large pots)",
+        "Custom glaze (matte, glossy, textured)",
+        "Private label logo printing",
+        "Custom mold development",
+        "Bulk order customization"
+      ],
+      "note": "All pots are made using Yixing purple clay and high-temperature kiln firing.",
+      "trustLine": "MOQ: 1000–2000 pcs | 300+ Workers | OEM Available | 2-Month Lead Time"
+    },
+    "packaging": {
+      "title": "Bulk Packaging & Safe Export Packing",
+      "intro": "For international wholesale orders, we use strong pallet and wooden crate packaging to ensure safe transportation. Each ceramic pot is carefully protected to reduce breakage during long-distance shipping.",
+      "features": [
+        "Pallet packaging",
+        "Wooden crate packing",
+        "Protective inner materials",
+        "Bulk container loading safety"
+      ],
+      "note": "This packaging method is suitable for shipments in the USA, Europe, and Middle East.",
+      "trustLine": "MOQ: 1000–2000 pcs | 300+ Workers | OEM Available | 2-Month Lead Time"
+    },
+    "export": {
+      "title": "Export & Global Shipping Support",
+      "intro": "We support global exports for bulk ceramic flowerpot orders. Our team assists with container loading, export documents, and international shipment coordination.",
+      "features": [
+        "20GP container",
+        "40HQ container",
+        "Lead time for production and delivery is around 2 months depending on order quantity",
+        "We mainly supply importers, garden centers, distributors, and landscaping companies worldwide"
+      ],
+      "note": "Professional export documentation and logistics coordination included.",
+      "trustLine": "MOQ: 1000–2000 pcs | 300+ Workers | OEM Available | 2-Month Lead Time"
     }
   },
   "NewToYou": {
@@ -134,11 +241,7 @@
     "socialLabel": "Social",
     "addressCardTitle": "Address",
     "addressLabel": "Address",
-<<<<<<< HEAD
     "addressValue": "No.2, Tongli Middle Road, Dingshu Town, Yixing City, Jiangsu Province, China, 214221",
-=======
-    "addressValue": "No-2, Tongli Middle Road, Dingyu Town, Yixing City, Jiangsu, China.",
->>>>>>> 78e120bfa4b7a58c644610043d32108638bd17a6
     "workingTimeLabel": "Working time",
     "workingTimeValue": "From Monday to Friday. 9AM to 6PM"
   },

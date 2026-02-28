@@ -22,14 +22,13 @@ const OurWorksAndProcess = () => {
     <ScrollMotion animation="fade-up">
       <section className="w-full bg-white py-8 md:py-20 overflow-hidden">
         <div className="container mx-auto px-4 space-y-24">
-          {/* --- Part 1: Our Works --- */}
+          {/* --- Part 1: Production & Packing Gallery --- */}
           <div>
             {/* Header */}
             <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 mb-12">
               <div className="max-w-2xl md:text-left text-center">
                 <h2 className="text-4xl md:text-5xl font-serif font-bold text-black mb-3">
-                  {/* {'Production & Packing Process'}{" "} */}
-                  <span className="text-primary">Production & Packing Process</span>
+                  <span className="text-primary">{t.projectTitle}</span>
                 </h2>
                 <p className="text-gray-500 text-lg">
                   {translations[locale].Insights.subtitle}
@@ -53,6 +52,7 @@ const OurWorksAndProcess = () => {
                       alt={t.projectTitle}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      unoptimized
                     />
                   </div>
 
@@ -77,6 +77,13 @@ const OurWorksAndProcess = () => {
 
           {/* --- Part 2: Process Flow --- */}
           <div className="relative py-12">
+            {/* Trust Line */}
+            <div className="text-center mb-8">
+              <p className="text-sm text-gray-400 font-medium tracking-wide">
+                {t.trustLine}
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-y-24 items-center">
               {/* Step 1: Top Left */}
               <div className="lg:col-start-1 lg:row-start-1 flex justify-center lg:justify-end">
@@ -107,6 +114,7 @@ const OurWorksAndProcess = () => {
                       alt="Logo"
                       fill
                       className="object-contain"
+                      unoptimized
                     />
                   </div>
                   <p className="font-serif font-bold text-lg text-center">
