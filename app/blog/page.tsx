@@ -6,7 +6,8 @@ const BlogPage = () => {
   return (
     <main>
       <PageHeroSection 
-        title="Blog" 
+        title="Ceramic Pot Insights & Factory Stories"
+        subtitle="Manufacturing insights, OEM production, and wholesale trends."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Blog', href: '/blog' }

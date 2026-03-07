@@ -68,10 +68,6 @@ const NewToYou = () => {
     fetchProducts();
   }, [activeTab]);
 
-  const formatPrice = (price: number) => {
-    return `$${price.toFixed(2)}`;
-  };
-
   const getProductImage = (product: Product): string => {
     // Get primary image or first image
     const primaryImage = product.images?.find(img => img.isPrimary);
@@ -169,12 +165,6 @@ const NewToYou = () => {
                     </div>
                   )}
                   
-                  {/* Discount Badge */}
-                  {product.compareAtPrice && product.compareAtPrice > product.price && (
-                    <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
-                      -{Math.round(((product.compareAtPrice - product.price) / product.compareAtPrice) * 100)}%
-                    </div>
-                  )}
                 </div>
 
                 {/* Info */}
@@ -187,15 +177,9 @@ const NewToYou = () => {
                       {product.category}
                     </p>
                   )}
-                  <div className="flex items-center justify-center gap-2">
-                    <p className="text-primary font-medium font-sans">
-                      {formatPrice(product.price)}
-                    </p>
-                    {product.compareAtPrice && product.compareAtPrice > product.price && (
-                      <p className="text-gray-400 text-sm line-through">
-                        {formatPrice(product.compareAtPrice)}
-                      </p>
-                    )}
+                  <div className="flex items-center justify-center gap-1.5 flex-wrap">
+                    <span className="text-xs text-gray-600 font-medium bg-gray-100 px-2 py-0.5 rounded-full">MOQ 1,000+ pcs</span>
+                    <span className="text-xs text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full">OEM Available</span>
                   </div>
                 </div>
               </Link>

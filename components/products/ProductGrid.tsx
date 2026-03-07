@@ -149,8 +149,6 @@ const ProductGrid = () => {
               >
                 <option value="newest">{t.sort.newest}</option>
                 <option value="name-asc">{t.sort.nameAsc}</option>
-                <option value="price-asc">{t.sort.priceAsc}</option>
-                <option value="price-desc">{t.sort.priceDesc}</option>
               </select>
             </div>
           </div>
@@ -214,19 +212,13 @@ const ProductGrid = () => {
                         )}
                       </div>
                       
-                      <div className="text-center space-y-1">
+                      <div className="text-center space-y-2">
                         <h3 className="font-title text-lg text-gray-900 group-hover:text-primary transition-colors line-clamp-2">
                           {product.name}
                         </h3>
-                        <div className="flex items-center justify-center gap-2">
-                          <p className="text-primary font-medium">
-                            ${product.price.toFixed(2)}
-                          </p>
-                          {product.compareAtPrice && product.compareAtPrice > product.price && (
-                            <p className="text-gray-400 line-through text-sm">
-                              ${product.compareAtPrice.toFixed(2)}
-                            </p>
-                          )}
+                        <div className="flex items-center justify-center gap-1.5 flex-wrap">
+                          <span className="text-xs text-gray-600 font-medium bg-gray-100 px-2 py-0.5 rounded-full">MOQ 1,000+ pcs</span>
+                          <span className="text-xs text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full">OEM Available</span>
                         </div>
                       </div>
                     </Link>

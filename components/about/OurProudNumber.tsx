@@ -15,10 +15,10 @@ const OurProudNumber = () => {
   const t = Translations[locale].AboutUs.ProudNumbers;
 
   const stats = [
-    { value: "15+", label: t.stats.experience },
-    { value: "3", label: t.stats.factories },
-    { value: "99%", label: t.stats.retention },
-    { value: "500+", label: t.stats.projects }
+    { value: "300+",   label: t.stats.projects },
+    { value: "4+",     label: t.stats.experience },
+    { value: "OEM",    label: t.stats.factories },
+    { value: "Global", label: t.stats.retention },
   ];
 
   // ISO 3166-1 numeric codes for highlighted countries

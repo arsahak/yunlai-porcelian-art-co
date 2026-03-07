@@ -286,19 +286,19 @@
       "learnMore": "了解更多"
     },
     "ProudNumbers": {
-      "titlePrefix": "我们引以为傲的数字 &",
-      "titleHighlight": "市场",
+      "titlePrefix": "我们的工厂实力",
+      "titleHighlight": "与产能",
       "stats": {
-        "experience": "多年经验",
-        "factories": "家工厂",
-        "retention": "客户保留率",
-        "projects": "全球成功项目"
+        "experience": "年经验",
+        "factories": "OEM与批量出口",
+        "retention": "全球批发供应",
+        "projects": "名工人"
       }
     }
   },
   "AIRevolution": {
-    "title": "AI革命 点击点燃。",
-    "desc": "体验我们的AI增强设计能力带来的瓷器工艺未来。",
+    "title": "中国宜兴值得信赖的陶瓷花盆制造商",
+    "desc": "为全球批发商、进口商及园艺绿化项目提供OEM定制与大批量生产服务。",
     "contactBtn": "联系我们",
     "learnMoreBtn": "了解更多"
   },
@@ -361,12 +361,12 @@
       "options": {
         "yes": "是",
         "no": "否",
-        "outdoor": "户外陶艺",
-        "indoor": "室内陶艺与红陶",
-        "fiberglass": "玻璃纤维与纤维石",
-        "fibercement": "纤维水泥",
-        "metal": "金属",
-        "wicker": "藤编"
+        "outdoor": "户外陶瓷花盆",
+        "indoor": "室内陶瓷花盆",
+        "fiberglass": "红陶 / 无釉陶",
+        "fibercement": "宜兴紫砂（紫泥）",
+        "metal": "大型花盆（园林景观）",
+        "wicker": ""
       }
     }
   },

@@ -6,12 +6,14 @@ import emailjs from '@emailjs/browser';
 import { Facebook, Instagram } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 import ScrollMotion from '../motion/ScrollMotion';
 
 const ContactForm = () => {
   const { locale } = useLocale();
   const t = Translations[locale].ContactForm;
+  const searchParams = useSearchParams();
   
   const [formData, setFormData] = useState({
     company: '',
@@ -21,6 +23,17 @@ const ContactForm = () => {
     phone: '',
     message: ''
   });
+
+  // Pre-fill message from Quick RFQ / quote URL params
+  useEffect(() => {
+    const subject = searchParams.get('subject');
+    const message = searchParams.get('message');
+
+    if (subject || message) {
+      const combined = [subject, message].filter(Boolean).join('\n\n');
+      setFormData(prev => ({ ...prev, message: combined }));
+    }
+  }, [searchParams]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 

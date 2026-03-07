@@ -286,19 +286,19 @@
       "learnMore": "Learn More"
     },
     "ProudNumbers": {
-      "titlePrefix": "Our Proud Numbers &",
-      "titleHighlight": "Markets",
+      "titlePrefix": "Our Factory Strength",
+      "titleHighlight": "& Capacity",
       "stats": {
-        "experience": "Years of Experience",
-        "factories": "Factories",
-        "retention": "Customer Retention Rate",
-        "projects": "Worldwide Successful Projects"
+        "experience": "Years Experience",
+        "factories": "OEM & Bulk Export",
+        "retention": "Global Wholesale Supply",
+        "projects": "Workers"
       }
     }
   },
   "AIRevolution": {
-    "title": "AI Revolution Click to Ignite.",
-    "desc": "Experience the future of porcelain craftsmanship with our AI-enhanced design capabilities.",
+    "title": "Trusted Ceramic Flower Pot Manufacturer in Yixing, China",
+    "desc": "Serving wholesalers, importers, and landscaping projects worldwide with OEM customization and bulk production.",
     "contactBtn": "Contact Us",
     "learnMoreBtn": "Learn More"
   },
@@ -361,12 +361,12 @@
       "options": {
         "yes": "Yes",
         "no": "No",
-        "outdoor": "Outdoor Pottery",
-        "indoor": "Indoor Pottery & Terracotta",
-        "fiberglass": "Fiberglass & Fiberstone",
-        "fibercement": "Fibercement",
-        "metal": "Metal",
-        "wicker": "Wicker"
+        "outdoor": "Outdoor Ceramic Pots",
+        "indoor": "Indoor Ceramic Pots",
+        "fiberglass": "Terracotta / Unglazed",
+        "fibercement": "Yixing Purple Clay (Zisha)",
+        "metal": "Large Planters (Landscaping)",
+        "wicker": ""
       }
     }
   },

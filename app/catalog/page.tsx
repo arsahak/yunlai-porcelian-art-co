@@ -7,7 +7,8 @@ const CatalogPage = () => {
   return (
     <main>
       <PageHeroSection 
-        title="Catalog" 
+        title="Download Wholesale Ceramic Pot Catalog"
+        subtitle="Get bulk pricing, OEM customization, and container shipment details."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Catalog', href: '/catalog' }

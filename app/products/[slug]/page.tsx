@@ -13,7 +13,7 @@ const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
   const { slug } = await params;
   
   return (
-    <main>
+    <main className="bg-white">
       <PageHeroSection 
         title="Product Details" 
         breadcrumbs={[
@@ -23,7 +23,7 @@ const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
         ]}
       />
       
-      <div className="container mx-auto px-4 py-8">
+      <div className="bg-white w-full">
         <ProductDetails slug={slug} />
       </div>
       <AIRevolutionClick/>

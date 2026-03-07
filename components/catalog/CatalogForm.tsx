@@ -32,7 +32,6 @@ const CatalogForm = () => {
     t.options.fiberglass,
     t.options.fibercement,
     t.options.metal,
-    t.options.wicker
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -294,6 +293,11 @@ const CatalogForm = () => {
                     </div>
                  )}
               </div>
+
+              {/* Trust Line */}
+              <p className="text-xs text-gray-500 pt-2 border-t border-gray-300/60">
+                MOQ: 1,000–2,000 pcs &nbsp;·&nbsp; 300+ Workers &nbsp;·&nbsp; OEM Available &nbsp;·&nbsp; 2-Month Lead Time
+              </p>
 
             </form>
           </div>

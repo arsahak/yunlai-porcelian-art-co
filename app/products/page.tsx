@@ -9,7 +9,8 @@ const ProductsPage = () => {
   return (
     <main>
       <PageHeroSection 
-        title="Products" 
+        title="Wholesale Ceramic Flower Pots"
+        subtitle="Explore our small, medium, and large ceramic pots for bulk importers and wholesalers."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Products', href: '/products' }
