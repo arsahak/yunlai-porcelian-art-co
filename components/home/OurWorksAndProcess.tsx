@@ -6,6 +6,7 @@ import { useLocale } from "@/lib/i18n";
 import translations from "@/messages/translations";
 import { Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
+import { title } from "process";
 
 const OurWorksAndProcess = () => {
   const { locale } = useLocale();
@@ -13,9 +14,9 @@ const OurWorksAndProcess = () => {
   const commonT = translations[locale].Common;
 
   const projects = [
-    { id: 1, image: "/assets/home/P82A9822.JPG" },
-    { id: 2, image: "/assets/home/WPS图片(1).jpeg" },
-    { id: 3, image: "/assets/home/P82A9877.JPG" },
+    { id: 1, image: "/assets/home/P82A9822.JPG",title:'Clay Preparation & Pot Forming' },
+    { id: 2, image: "/assets/home/WPS图片(1).jpeg",title:'Drying & Kiln Firing Process' },
+    { id: 3, image: "/assets/home/P82A9877.JPG",title:'Packing & Container Loading' },
   ];
 
   return (
@@ -35,7 +36,7 @@ const OurWorksAndProcess = () => {
                 </p>
               </div>
               <Button
-                href="/portfolio"
+                href="/contact-us"
                 className="!px-8 !py-3 bg-primary hover:bg-primary/90 shadow-lg !text-white "
               >
                 {translations[locale].Insights.explore}
@@ -68,7 +69,7 @@ const OurWorksAndProcess = () => {
                   </div>
 
                   <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary transition-colors leading-tight">
-                    {t.projectTitle}
+                    {project?.title}
                   </h3>
                 </div>
               ))}

@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
 
           <Link
-            href="/contact"
+            href="/contact-us"
             className="bg-white hover:bg-gray-100 text-primary font-bold text-base px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl uppercase tracking-wider"
           >
             {t.quoteButton}
@@ -168,7 +168,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="text-gray-500 hover:text-primary transition-colors text-sm"
                 >
                   {t.support.contact}

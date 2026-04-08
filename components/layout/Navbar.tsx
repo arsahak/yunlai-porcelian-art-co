@@ -97,7 +97,7 @@ const Navbar = () => {
               <span className="uppercase">{locale}</span>
             </button>
 
-            <Button href="/contact" className="!px-6 !py-2 !text-sm">
+            <Button href="/contact-us" className="!px-6 !py-2 !text-sm">
               {commonT.contactUs}
             </Button>
           </div>
@@ -191,7 +191,7 @@ const Navbar = () => {
                 }}
                 className="pt-4"
               >
-                <Button href="/contact" className="w-full justify-center">
+                <Button href="/contact-us" className="w-full justify-center">
                   {commonT.contactUs}
                 </Button>
               </motion.div>

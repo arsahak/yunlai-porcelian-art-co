@@ -151,7 +151,7 @@ export default function ServiceDetailPage() {
                       : "立即联系我们获取批发价格、定制报价和运输详情。"}
                   </p>
                   <Button
-                    href="/contact"
+                    href="/contact-us"
                     className="!bg-white !text-primary hover:!bg-gray-100 !px-8 !py-3 !text-lg"
                   >
                     {t.Common.contactUs}
