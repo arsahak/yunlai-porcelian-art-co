@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
             <Image
-              src="/assets/site-logo/site-logonew.png"
+              src="/assets/site-logo/yixing-yunlai-black-logo.png"
               alt="Yunlai Porcelain Art"
               width={550}
               height={350}

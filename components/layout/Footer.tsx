@@ -39,15 +39,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-12 gap-y-12 gap-x-8 mb-16">
           {/* Brand Column */}
           <div className="col-span-1 min-[480px]:col-span-2 lg:col-span-4 space-y-6 text-center lg:text-left">
-            <Link href="/" className="inline-block relative h-24 w-24">
+            <Link href="/" className="inline-block relative ">
               <Image
-                src="/assets/site-logo/site-logonew.png"
+                src="/assets/site-logo/yixing-yunlai-black-logo.png"
                 alt="Yunlai Porcelain"
-                fill
-                className="object-contain"
+                className="object-contain w-[200px] md:w-[300px] h-[70px] md:h-[100px]"
                 unoptimized
+                width={500}
+                height={400}
               />
-              <div className="absolute inset-0 border-2 border-primary rounded-full -z-10" />
             </Link>
             <p className="text-gray-500 leading-relaxed text-sm md:text-base lg:pr-4 mx-auto lg:mx-0 max-w-md lg:max-w-none">
               {t.description}
@@ -181,7 +181,9 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-gray-900">{t.contact.email}:</p>
+                  <p className="font-medium text-gray-900">
+                    {t.contact.email}:
+                  </p>
                   <a
                     href={`mailto:${t.contact.emailValue}`}
                     className="hover:text-primary transition-colors"
@@ -193,7 +195,9 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-gray-900">{t.contact.mobile}:</p>
+                  <p className="font-medium text-gray-900">
+                    {t.contact.mobile}:
+                  </p>
                   <a
                     href={`tel:${t.contact.mobileValue}`}
                     className="hover:text-primary transition-colors"
@@ -205,7 +209,9 @@ const Footer = () => {
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-medium text-gray-900">{t.contact.address}:</p>
+                  <p className="font-medium text-gray-900">
+                    {t.contact.address}:
+                  </p>
                   <p className="text-gray-500 leading-relaxed">
                     {t.contact.addressValue}
                   </p>

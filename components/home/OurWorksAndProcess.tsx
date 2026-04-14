@@ -6,7 +6,6 @@ import { useLocale } from "@/lib/i18n";
 import translations from "@/messages/translations";
 import { Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
-import { title } from "process";
 
 const OurWorksAndProcess = () => {
   const { locale } = useLocale();
@@ -14,9 +13,21 @@ const OurWorksAndProcess = () => {
   const commonT = translations[locale].Common;
 
   const projects = [
-    { id: 1, image: "/assets/home/P82A9822.JPG",title:'Clay Preparation & Pot Forming' },
-    { id: 2, image: "/assets/home/WPS图片(1).jpeg",title:'Drying & Kiln Firing Process' },
-    { id: 3, image: "/assets/home/P82A9877.JPG",title:'Packing & Container Loading' },
+    {
+      id: 1,
+      image: "/assets/home/P82A9822.JPG",
+      title: "Clay Preparation & Pot Forming",
+    },
+    {
+      id: 2,
+      image: "/assets/home/WPS图片(1).jpeg",
+      title: "Drying & Kiln Firing Process",
+    },
+    {
+      id: 3,
+      image: "/assets/home/P82A9877.JPG",
+      title: "Packing & Container Loading",
+    },
   ];
 
   return (
@@ -111,7 +122,7 @@ const OurWorksAndProcess = () => {
                 <div className="relative w-64 h-48 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center justify-center border border-gray-100">
                   <div className="w-20 h-20 relative mb-2">
                     <Image
-                      src="/assets/site-logo/site-logonew.png"
+                      src="/assets/site-logo/onlyicon.png"
                       alt="Logo"
                       fill
                       className="object-contain"

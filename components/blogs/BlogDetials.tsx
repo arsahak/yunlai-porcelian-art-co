@@ -60,6 +60,7 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
 
   if (loading) {
     return (
+      <div className="bg-white w-full min-h-screen text-gray-900" style={{ '--background': '#ffffff', '--foreground': '#111827' } as React.CSSProperties}>
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content Skeleton */}
@@ -90,11 +91,13 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
           </div>
         </div>
       </div>
+      </div>
     );
   }
 
   if (!blog) {
     return (
+      <div className="bg-white w-full min-h-screen text-gray-900" style={{ '--background': '#ffffff', '--foreground': '#111827' } as React.CSSProperties}>
       <div className="container mx-auto px-4 py-20 text-center">
         <h2 className="text-3xl font-title text-gray-900 mb-4">{t.notFound}</h2>
         <p className="text-gray-500 mb-8">{t.notFoundDesc}</p>
@@ -105,10 +108,15 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
           {t.backToBlog}
         </Link>
       </div>
+      </div>
     );
   }
 
   return (
+    <div
+      className="bg-white w-full text-gray-900"
+      style={{ '--background': '#ffffff', '--foreground': '#111827' } as React.CSSProperties}
+    >
     <div className="container mx-auto px-4 py-8 md:py-20">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         
@@ -169,8 +177,8 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
             </h1>
 
             {/* Content Body */}
-            <div 
-              className="prose prose-lg prose-gray max-w-none prose-headings:font-title prose-a:text-primary prose-img:rounded-2xl"
+            <div
+              className="blog-content"
               dangerouslySetInnerHTML={{ __html: blog.body }}
             />
             
@@ -194,7 +202,7 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
           <div className="sticky top-24 space-y-10">
             
             {/* Latest Posts Widget */}
-            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 text-gray-900">
               <h3 className="text-2xl font-title text-gray-900 mb-6 flex items-center gap-3">
                  {t.latestStories}
                  <span className="w-12 h-1 bg-primary rounded-full block"></span>
@@ -248,6 +256,7 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
         </div>
 
       </div>
+    </div>
     </div>
   );
 };

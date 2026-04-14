@@ -122,7 +122,11 @@ const BlogGrid = () => {
   };
 
   return (
-    <ScrollMotion animation="fade-up">
+    <ScrollMotion animation="fade-up" className="bg-white w-full">
+    <div
+      className="text-gray-900"
+      style={{ '--background': '#ffffff', '--foreground': '#111827' } as React.CSSProperties}
+    >
     <div className="container mx-auto px-8 py-20">
       {/* Header & Sort */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-4">
@@ -282,6 +286,7 @@ const BlogGrid = () => {
           <p className="text-gray-500 text-lg">{t.noPosts}</p>
         </div>
       )}
+    </div>
     </div>
     </ScrollMotion>
   );
