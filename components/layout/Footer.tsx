@@ -62,7 +62,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="/about"
+                  href="/about-us"
                   className="text-gray-500 hover:text-primary transition-colors text-sm"
                 >
                   {t.company.aboutFactory}
@@ -70,7 +70,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/about-us"
                   className="text-gray-500 hover:text-primary transition-colors text-sm"
                 >
                   {t.company.productionProcess}
