@@ -74,6 +74,10 @@ const BlogGrid = () => {
     setCurrentPage(1);
   };
 
+  // Strip HTML tags for plain-text preview
+  const stripHtml = (html: string) =>
+    html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+
   // Format date
   const formatDate = (dateString?: string) => {
     if (!dateString) return 'No date';
@@ -219,7 +223,7 @@ const BlogGrid = () => {
 
                   {/* Excerpt */}
                   <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-                    {blog.excerpt || blog.body?.substring(0, 150) + '...'}
+                    {blog.excerpt || (blog.body ? stripHtml(blog.body).substring(0, 150) + '…' : '')}
                   </p>
 
                   {/* Author */}

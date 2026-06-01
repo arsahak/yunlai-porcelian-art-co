@@ -178,7 +178,7 @@ const BlogDetails = ({ slug }: BlogDetailsProps) => {
 
             {/* Content Body */}
             <div
-              className="blog-content"
+              className="blog-content max-w-none"
               dangerouslySetInnerHTML={{ __html: blog.body }}
             />
             

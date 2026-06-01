@@ -227,20 +227,22 @@ const Footer = () => {
             {t.rights}
           </p>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center gap-3">
             <Link
               target="_blank"
               href="https://www.facebook.com/yunlaiceramicsfactory/"
-              className="text-gray-400 hover:text-primary transition-colors"
+              aria-label="Facebook"
+              className="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center text-white transition-all duration-200 hover:scale-110 hover:brightness-110"
             >
-              <Facebook size={20} />
+              <Facebook size={17} />
             </Link>
             <Link
               target="_blank"
               href="https://www.instagram.com/yixing_yunlai_zisha/"
-              className="text-gray-400 hover:text-primary transition-colors"
+              aria-label="Instagram"
+              className="w-9 h-9 rounded-full bg-gradient-to-br from-[#f58529] via-[#dd2a7b] to-[#8134af] flex items-center justify-center text-white transition-all duration-200 hover:scale-110 hover:brightness-110"
             >
-              <Instagram size={20} />
+              <Instagram size={17} />
             </Link>
           </div>
         </div>

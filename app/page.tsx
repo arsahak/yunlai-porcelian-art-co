@@ -8,16 +8,27 @@ import OurWorksAndProcess from "@/components/home/OurWorksAndProcess";
 import ImageViewSection from "@/components/shared/ImageViewSection";
 
 export const metadata = {
-  title: "Yixing Yunlai Zisha Art and Culture Co., Ltd.",
-  description: "Beautiful collection of Yunlai porcelain art",
+  title: "Wholesale Ceramic Flower Pots & Yixing Zisha Pots | Yunlai",
+  description:
+    "Leading wholesale ceramic flower pots supplier. Get authentic Yixing Zisha pots directly from our factory. Custom OEM/ODM designs with global shipping.",
   alternates: {
     canonical: "/",
-    languages: {
-      "en-US": "/en-USA",
-    },
   },
   openGraph: {
-    images: "/opengraph-image.png",
+    title: "Wholesale Ceramic Flower Pots & Yixing Zisha Pots | Yunlai",
+    description:
+      "Leading wholesale ceramic flower pots supplier. Get authentic Yixing Zisha pots directly from our factory. Custom OEM/ODM designs with global shipping.",
+    url: "https://www.yixingyunlai.com",
+    siteName: "Yixing Yunlai",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Yunlai Ceramic Factory" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wholesale Ceramic Flower Pots & Yixing Zisha Pots | Yunlai",
+    description:
+      "Leading wholesale ceramic flower pots supplier. Get authentic Yixing Zisha pots directly from our factory. Custom OEM/ODM designs with global shipping.",
+    images: ["/opengraph-image.png"],
   },
 };
 

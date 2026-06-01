@@ -4,7 +4,7 @@ import { getProduct, getProducts, Product } from "@/app/actions/products";
 import ScrollMotion from "@/components/motion/ScrollMotion";
 import { useLocale } from "@/lib/i18n";
 import Translations from "@/messages/translations";
-import { ChevronDown, ChevronUp, FileText, Send } from "lucide-react";
+import { ChevronDown, ChevronUp, FileText, Package, Send, Wrench } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -26,6 +26,12 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
   const [orderQty, setOrderQty] = useState(1000);
   const [selectedColor, setSelectedColor] = useState<string>("");
   const [selectedSize, setSelectedSize] = useState<string>("");
+
+  const [activeTab, setActiveTab] = useState<"description" | "specs" | "rfq">("description");
+
+  // Strip HTML for short inline preview
+  const stripHtml = (html: string) =>
+    html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
 
   // Quick RFQ form state
   const [rfqSize, setRfqSize] = useState("");
@@ -242,8 +248,24 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
               <span className="bg-green-50 text-green-700 text-sm font-semibold px-3 py-1.5 rounded-full">Bulk Wholesale Only</span>
             </div>
 
-            {/* Description */}
-            <p className="text-gray-500 text-sm leading-relaxed mb-6">{product.description}</p>
+            {/* Description teaser — full version in the tab section below */}
+            {product.description && (
+              <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">
+                {stripHtml(product.description).substring(0, 200)}
+                {stripHtml(product.description).length > 200 && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setActiveTab("description");
+                      document.getElementById("product-tabs")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="text-primary font-medium ml-1 hover:underline"
+                  >
+                    Read more ↓
+                  </button>
+                )}
+              </p>
+            )}
 
             {/* B2B Specs table */}
             <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-6 space-y-2 text-sm">
@@ -383,121 +405,177 @@ const ProductDetails = ({ slug }: ProductDetailsProps) => {
               MOQ 1,000–2,000 pcs &nbsp;·&nbsp; Lead time ~60 days &nbsp;·&nbsp; OEM / Custom logo available
             </p>
 
-            {/* ── Quick RFQ Block ── */}
-            <div className="border border-gray-200 rounded-2xl p-6 bg-gray-50">
-              <h3 className="text-lg font-semibold text-gray-900 mb-1">Quick RFQ</h3>
-              <p className="text-xs text-gray-500 mb-5">Fill in your requirements and we&apos;ll respond within 24 hours.</p>
+            {/* RFQ shortcut — opens the RFQ tab below */}
+            <button
+              type="button"
+              onClick={() => {
+                setActiveTab("rfq");
+                document.getElementById("product-tabs")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="w-full h-11 border border-dashed border-primary text-primary text-sm font-semibold rounded-full hover:bg-primary/5 transition-colors flex items-center justify-center gap-2"
+            >
+              <Wrench className="w-4 h-4" />
+              Fill in detailed RFQ ↓
+            </button>
 
+          </div>
+        </div>
+
+        {/* ── Tabbed Content Section ── */}
+        <div id="product-tabs" className="border-t border-gray-100 pt-12 mb-16">
+
+          {/* Tab Nav */}
+          <div className="flex gap-1 mb-8 border-b border-gray-200">
+            {[
+              { key: "description", label: "Description", icon: <FileText className="w-4 h-4" /> },
+              { key: "specs",       label: "Specifications", icon: <Package className="w-4 h-4" /> },
+              { key: "rfq",         label: "Quick RFQ", icon: <Send className="w-4 h-4" /> },
+            ].map((tab) => (
+              <button
+                key={tab.key}
+                type="button"
+                onClick={() => setActiveTab(tab.key as typeof activeTab)}
+                className={`flex items-center gap-2 px-5 py-3 text-sm font-semibold border-b-2 -mb-px transition-colors ${
+                  activeTab === tab.key
+                    ? "border-primary text-primary"
+                    : "border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300"
+                }`}
+              >
+                {tab.icon}
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Description Tab */}
+          {activeTab === "description" && (
+            <div className="max-w-3xl">
+              {product.description ? (
+                <div
+                  className="product-content"
+                  dangerouslySetInnerHTML={{ __html: product.description }}
+                />
+              ) : (
+                <p className="text-gray-400 italic">No description available.</p>
+              )}
+            </div>
+          )}
+
+          {/* Specifications Tab */}
+          {activeTab === "specs" && (
+            <div className="max-w-2xl">
+              <div className="rounded-xl overflow-hidden border border-gray-200 text-sm">
+                {[
+                  {
+                    label: "SKU",
+                    value: selectedSize && product.sizeVariants
+                      ? product.sizeVariants.find((v) => v.size === selectedSize)?.sku || product.sku
+                      : product.sku,
+                  },
+                  { label: "Category", value: product.category },
+                  product.sizeVariants && product.sizeVariants.length > 0
+                    ? { label: "Available Sizes", value: product.sizeVariants.map((v) => v.size).join("  ·  ") }
+                    : null,
+                  product.colorVariants && product.colorVariants.length > 0
+                    ? { label: "Available Colors", value: product.colorVariants.map((v) => v.color).join("  ·  ") }
+                    : null,
+                  { label: "MOQ", value: "1,000 – 2,000 pcs" },
+                  { label: "Lead Time", value: "~60 days" },
+                  { label: "OEM / Custom Logo", value: "Available" },
+                  { label: "Packaging", value: "Pallet / Wooden Crate" },
+                  { label: "Container", value: "20GP / 40HQ" },
+                ].filter(Boolean).map((row, idx) => (
+                  <div
+                    key={idx}
+                    className={`flex ${idx % 2 === 0 ? "bg-white" : "bg-gray-50"} border-b border-gray-100 last:border-0`}
+                  >
+                    <span className="w-44 shrink-0 px-5 py-3.5 font-semibold text-gray-900 border-r border-gray-100">
+                      {row!.label}
+                    </span>
+                    <span className="px-5 py-3.5 text-gray-600">{row!.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* RFQ Tab — moved from inline */}
+          {activeTab === "rfq" && (
+            <div className="max-w-xl">
+              <p className="text-sm text-gray-500 mb-6">
+                Fill in your requirements and we&apos;ll respond within 24 hours.
+              </p>
               <form onSubmit={handleRFQSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
                   <div>
                     <label className="text-xs font-semibold text-gray-700 block mb-1">Size / Model</label>
-                    <input
-                      type="text"
-                      value={rfqSize}
-                      onChange={(e) => setRfqSize(e.target.value)}
+                    <input type="text" value={rfqSize} onChange={(e) => setRfqSize(e.target.value)}
                       placeholder="e.g. 38×38 cm"
-                      className="w-full h-10 border border-gray-300 rounded-lg px-3 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white"
-                    />
+                      className="w-full h-10 border border-gray-300 rounded-lg px-3 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white" />
                   </div>
-
                   <div>
                     <label className="text-xs font-semibold text-gray-700 block mb-1">Color / Glaze</label>
-                    <input
-                      type="text"
-                      value={rfqColor}
-                      onChange={(e) => setRfqColor(e.target.value)}
+                    <input type="text" value={rfqColor} onChange={(e) => setRfqColor(e.target.value)}
                       placeholder="e.g. Blue Glaze"
-                      className="w-full h-10 border border-gray-300 rounded-lg px-3 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white"
-                    />
+                      className="w-full h-10 border border-gray-300 rounded-lg px-3 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white" />
                   </div>
-
                   <div>
                     <label className="text-xs font-semibold text-gray-700 block mb-1">
                       Order Qty <span className="text-gray-400 font-normal">(MOQ: 1,000 pcs)</span>
                     </label>
-                    <input
-                      type="number"
-                      value={rfqQty}
-                      onChange={(e) => setRfqQty(e.target.value)}
-                      placeholder="e.g. 2000"
-                      min="1000"
-                      className="w-full h-10 border border-gray-300 rounded-lg px-3 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white"
-                    />
+                    <input type="number" value={rfqQty} onChange={(e) => setRfqQty(e.target.value)}
+                      placeholder="e.g. 2000" min="1000"
+                      className="w-full h-10 border border-gray-300 rounded-lg px-3 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white" />
                   </div>
-
                   <div>
                     <label className="text-xs font-semibold text-gray-700 block mb-1">Destination Country / Port</label>
-                    <input
-                      type="text"
-                      value={rfqDestPort}
-                      onChange={(e) => setRfqDestPort(e.target.value)}
+                    <input type="text" value={rfqDestPort} onChange={(e) => setRfqDestPort(e.target.value)}
                       placeholder="e.g. Los Angeles, USA"
-                      className="w-full h-10 border border-gray-300 rounded-lg px-3 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white"
-                    />
+                      className="w-full h-10 border border-gray-300 rounded-lg px-3 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white" />
                   </div>
-
                   <div>
                     <label className="text-xs font-semibold text-gray-700 block mb-1">Need OEM / Custom Logo?</label>
                     <div className="flex gap-3 mt-1">
                       {(["yes", "no"] as const).map((opt) => (
-                        <button
-                          type="button"
-                          key={opt}
-                          onClick={() => setRfqNeedOEM(opt)}
+                        <button type="button" key={opt} onClick={() => setRfqNeedOEM(opt)}
                           className={`flex-1 h-10 rounded-lg border-2 text-sm font-medium capitalize transition-all
-                          ${rfqNeedOEM === opt
-                            ? "border-primary bg-primary/10 text-primary"
-                            : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"}`}
-                        >
+                          ${rfqNeedOEM === opt ? "border-primary bg-primary/10 text-primary" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"}`}>
                           {opt}
                         </button>
                       ))}
                     </div>
                   </div>
-
                   <div>
                     <label className="text-xs font-semibold text-gray-700 block mb-1">WhatsApp / Email</label>
-                    <input
-                      type="text"
-                      value={rfqContact}
-                      onChange={(e) => setRfqContact(e.target.value)}
+                    <input type="text" value={rfqContact} onChange={(e) => setRfqContact(e.target.value)}
                       placeholder="+1 234 567 890 or email"
-                      className="w-full h-10 border border-gray-300 rounded-lg px-3 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white"
-                    />
+                      className="w-full h-10 border border-gray-300 rounded-lg px-3 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white" />
                   </div>
-
                 </div>
-
                 <div>
-                  <label className="text-xs font-semibold text-gray-700 block mb-1">Message <span className="text-gray-400 font-normal">(optional)</span></label>
-                  <textarea
-                    value={rfqMessage}
-                    onChange={(e) => setRfqMessage(e.target.value)}
+                  <label className="text-xs font-semibold text-gray-700 block mb-1">
+                    Message <span className="text-gray-400 font-normal">(optional)</span>
+                  </label>
+                  <textarea value={rfqMessage} onChange={(e) => setRfqMessage(e.target.value)}
                     placeholder="Special requirements, certifications, packaging, reference images, etc."
                     rows={3}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white resize-none"
-                  />
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:border-primary bg-white resize-none" />
                 </div>
-
-                <button
-                  type="submit"
-                  className="w-full h-12 bg-gradient-to-b from-[#3DA754] to-[#28883D] hover:from-[#44bd5e] hover:to-[#2f9e47] text-white font-semibold rounded-full shadow-md transition-all active:scale-[0.98] flex items-center justify-center gap-2"
-                >
+                <button type="submit"
+                  className="w-full h-12 bg-gradient-to-b from-[#3DA754] to-[#28883D] hover:from-[#44bd5e] hover:to-[#2f9e47] text-white font-semibold rounded-full shadow-md transition-all active:scale-[0.98] flex items-center justify-center gap-2">
                   <Send className="w-4 h-4" />
                   Send Inquiry
                 </button>
               </form>
             </div>
+          )}
 
-          </div>
         </div>
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
           <div className="border-t border-gray-100 pt-16">
-            <h2 className="text-3xl md:text-4xl font-title text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-title text-gray-900 text-center mb-12">
               {t.relatedTitle}{" "}
               <span className="text-primary">{t.relatedSubtitle}</span>
             </h2>

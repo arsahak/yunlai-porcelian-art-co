@@ -148,6 +148,8 @@ const ProductGrid = () => {
                 }}
               >
                 <option value="newest">{t.sort.newest}</option>
+                <option value="price-asc">{t.sort.priceAsc}</option>
+                <option value="price-desc">{t.sort.priceDesc}</option>
                 <option value="name-asc">{t.sort.nameAsc}</option>
               </select>
             </div>
