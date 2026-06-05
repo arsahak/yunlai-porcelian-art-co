@@ -32,7 +32,7 @@ const NewToYou = () => {
       setLoading(true);
       try {
         const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-        let url = `${API_URL}/api/products?status=active&limit=10&sortBy=createdAt&sortOrder=desc`;
+        let url = `${API_URL}/api/products?status=active&limit=10&sortBy=createdAt&sortOrder=asc`;
         
         // Add badge filter based on active tab
         const currentTab = tabs.find(tab => tab.id === activeTab);

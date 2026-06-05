@@ -21,6 +21,9 @@ const kefirMedium = localFont({
 
 export const metadata = {
   metadataBase: new URL("https://www.yixingyunlai.com"),
+  verification: {
+    google: "bcd43275-772c-4733-95d2-a3d8e1241da3",
+  },
 };
 
 export default function RootLayout({
